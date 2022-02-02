@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2E3440">
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon//favicon-16x16.png">
+  <link rel="manifest" href="../assets/favicon//site.webmanifest">
+  <link rel="mask-icon" href="../assets/favicon//safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <!-- styles -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- scripts -->
+  <script src="https://kit.fontawesome.com/fdd79f7c58.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="../cursor.js"></script>
+  <script>
+    fetch('https://api.mcsrvstat.us/2/mc.vuxnq.me')
+      .then(res => res.json())
+      .then(data => {
+        if (data.online === true) {
+          document.getElementById('status').innerHTML = 'Server is currently online so you can hop on :)<br> There is ' + data.players.online + ' player(s) online';
+        } else {
+          document.getElementById('status').innerHTML = 'Server is currently offline :(';
+        }
+      })
+  </script>
+
+  <title>vuxnq | Sweet Berries</title>
+</head>
+
+<body>
+  <!-- background -->
+  <div class=background>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+
+  <header>
+    <div style="text-align: left;">
+      <a class="header item" href="/">vuxnq</a>
+    </div>
+    <div id="stretch"></div>
+    <div>
+      <a href="https://twitter.com/vuxnqu/" target="_blank" id="twitter" class="item"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com/cirix/" target="_blank" id="youtube" class="item"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com/vuxnq/" target="_blank" id="instagram" class="item"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/vuxnq/" target="_blank" id="github" class="item"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </header>
+  <div class="wrapper">
+    <div id="back"><a href="javascript:history.back()"><i class="fas fa-chevron-left"></i> back</a></div>
+    <main>
+      <section>
+        <h1><i class="fas fa-server"></i> Sweet Berries</h1>
+        <article>
+          <img src="assets/images/server/server-icon.png" alt="logo">
+          <h2>mc.vuxnq.me</h2>
+          <p>I have worked countless hours creating and polishing it
+            that I don't even wanna play on it anymore.</p>
+          <p>Sweet Berries offers a wide selection of servers ranging from Survival to... Hub? Can that be counted as a server?</p>
+          <p>There is no playerbase yet so please help me fulfill my dreams and join my server.
+            Or don't because I would have to pay people to moderate it and that's not cheap. /s</p>
+          <br>
+          <h3>Status</h3>
+          <p id="status">ERROR: Failed to recieve data</p>
+          <p>mc.vuxnq.me</p>
+        </article>
+      </section>
+      <section id="whitelist">
+        <h1><i class="fas fa-clipboard-list"></i> Whitelist Application</h1>
+        <article>
+          <h2>Apply here</h2>
+          <form method="post">
+            <p>username: <input type="text" name="username" placeholder="vuxnq"></p>
+            <p>contact: <input type="text" name="contact" placeholder="example@mail.com"></p>
+            <br>
+            <p>the contact form is there so I can inform you about the application</p>
+            <input class="button" type="submit" name="submit" value="Apply">
+          </form>
+        </article>
+      </section>
+      <section id="screenshots">
+        <h1><i class="fas fa-images"></i> Screenshots</h1>
+        <article>
+          <h2>Hub</h2>
+          <img class="screenshot" src="assets/images/server/hub1.png" alt="hub1">
+          <img class="screenshot" src="assets/images/server/hub2.png" alt="hub2">
+          <img class="screenshot" src="assets/images/server/hub3.png" alt="hub3">
+          <img class="screenshot" src="assets/images/server/hub4.png" alt="hub4">
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <ul class="footer">
+          <li><a href="https://last.fm/user/vuxnq/" target="_blank">last.fm</a></li>
+        </ul>
+      </div>
+      <div class="footer">
+        <div id="copyright">© 2022 vuxnq</div>
+      </div>
+    </footer>
+  </div>
+  <div id="cursor"></div>
+</body>
+</html>
