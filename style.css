@@ -502,12 +502,6 @@ li {
   margin-top: 0.5em;
 }
 
-input[type="submit"].button {
-  appearance: button;
-  -moz-appearance: button;
-  -webkit-appearance: button;
-}
-
 .button:hover {
   transform: translateY(-6px);
   background-color: var(--a3);
@@ -536,21 +530,25 @@ input[type="submit"].button {
 
 /* PHP Alert */
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
+  transition: 0.1s;
   background-color: transparent;
   font-size: 20px;
   color: var(--a1);
   border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--bg1);
+  border-radius: 8px;
 }
 
-input[type="text"]::placeholder {
+input[type="text"]::placeholder, input[type="email"]::placeholder {
   color: var(--bg4);
 }
 
-input[type="text"]:focus {
-  background-color: var(--bg3);
-  border-radius: 5px;
+input[type="text"]:focus, input[type="email"]:focus {
   outline: none;
+  box-shadow: 0px 0px 0px 2px var(--a1), 0px 6px 10px var(--bg4);
 }
 
 .alert-warning {

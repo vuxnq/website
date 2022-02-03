@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +22,7 @@
   <!-- scripts -->
   <script src="https://kit.fontawesome.com/fdd79f7c58.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdN9VQeAAAAAF81kR17w9hLF-hpyRD-oXjCgLfg"></script>
   <script src="../cursor.js"></script>
   <script>
     fetch('https://api.mcsrvstat.us/2/mc.vuxnq.me')
@@ -33,6 +35,14 @@
         }
       })
   </script>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LdN9VQeAAAAAF81kR17w9hLF-hpyRD-oXjCgLfg', { action: 'homepage' })
+        .then(function (token) {
+          document.getElementById('captchaResponse').value = token;
+        });
+    });
+  </script>
 
   <title>vuxnq | Sweet Berries</title>
 </head>
@@ -40,17 +50,17 @@
 <body>
   <!-- background -->
   <div class=background>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
   <header>
     <div style="text-align: left;">
@@ -60,7 +70,8 @@
     <div>
       <a href="https://twitter.com/vuxnqu/" target="_blank" id="twitter" class="item"><i class="fab fa-twitter"></i></a>
       <a href="https://youtube.com/cirix/" target="_blank" id="youtube" class="item"><i class="fab fa-youtube"></i></a>
-      <a href="https://instagram.com/vuxnq/" target="_blank" id="instagram" class="item"><i class="fab fa-instagram"></i></a>
+      <a href="https://instagram.com/vuxnq/" target="_blank" id="instagram" class="item"><i
+          class="fab fa-instagram"></i></a>
       <a href="https://github.com/vuxnq/" target="_blank" id="github" class="item"><i class="fab fa-github-alt"></i></a>
     </div>
   </header>
@@ -74,7 +85,8 @@
           <h2>mc.vuxnq.me</h2>
           <p>I have worked countless hours creating and polishing it
             that I don't even wanna play on it anymore.</p>
-          <p>Sweet Berries offers a wide selection of servers ranging from Survival to... Hub? Can that be counted as a server?</p>
+          <p>Sweet Berries offers a wide selection of servers ranging from Survival to... Hub? Can that be counted as a
+            server?</p>
           <p>There is no playerbase yet so please help me fulfill my dreams and join my server.
             Or don't because I would have to pay people to moderate it and that's not cheap. /s</p>
           <br>
@@ -87,12 +99,13 @@
         <h1><i class="fas fa-clipboard-list"></i> Whitelist Application</h1>
         <article>
           <h2>Apply here</h2>
-          <form method="post">
-            <p>username: <input type="text" name="username" placeholder="vuxnq"></p>
-            <p>contact: <input type="text" name="contact" placeholder="example@mail.com"></p>
+          <form action="https://getform.io/f/0e1f6009-c2dd-4d53-aa8a-a3ebcd76dd55" method="post">
+            <input type="text" name="username" placeholder="username" required> <br>
+            <input type="email" name="email" placeholder="email" required>
             <br>
             <p>the contact form is there so I can inform you about the application</p>
-            <input class="button" type="submit" name="submit" value="Apply">
+            <input type="hidden" id="captchaResponse" name="g-recaptcha-response">
+            <button class="button" type="submit">Apply</button>
           </form>
         </article>
       </section>
@@ -120,4 +133,5 @@
   </div>
   <div id="cursor"></div>
 </body>
+
 </html>
