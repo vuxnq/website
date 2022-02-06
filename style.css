@@ -45,10 +45,10 @@
 /* Animations */
 @keyframes alert {
   0% {
-    opacity: 255;
+    opacity: 100%;
   }
   100% {
-    opacity: 0;
+    opacity: 0%;
   }
 }
 
@@ -201,17 +201,6 @@
   margin-bottom: 25px;
 }
 
-/* CSS Styles */
-::selection {
-  color: var(--bg1);
-  background-color: var(--a3);
-  text-shadow: none;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 /* Headings & Paragraph */
 h1 {
   font-family: var(--font-text-bold);
@@ -253,6 +242,17 @@ h6 {
 p {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
+}
+
+/* CSS Styles */
+::selection {
+  color: var(--bg1);
+  background-color: var(--a3);
+  text-shadow: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -467,7 +467,6 @@ a.reset:hover {
 .big-button {
   display: none;
   width: 30px;
-  height: 100;
   margin-bottom: 25px;
   text-align: center;
   writing-mode: vertical-rl;

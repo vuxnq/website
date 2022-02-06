@@ -23,25 +23,7 @@
   <script src="https://kit.fontawesome.com/fdd79f7c58.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://www.google.com/recaptcha/api.js?render=6LdN9VQeAAAAAF81kR17w9hLF-hpyRD-oXjCgLfg"></script>
-  <script>
-    fetch('https://api.mcsrvstat.us/2/mc.vuxnq.me')
-      .then(res => res.json())
-      .then(data => {
-        if (data.online === true) {
-          document.getElementById('status').innerHTML = 'Server is currently online so you can hop on :)<br> There is ' + data.players.online + ' player(s) online';
-        } else {
-          document.getElementById('status').innerHTML = 'Server is currently offline :(';
-        }
-      })
-  </script>
-  <script>
-    grecaptcha.ready(function () {
-      grecaptcha.execute('6LdN9VQeAAAAAF81kR17w9hLF-hpyRD-oXjCgLfg', { action: 'homepage' })
-        .then(function (token) {
-          document.getElementById('captchaResponse').value = token;
-        });
-    });
-  </script>
+  <script src="script.js"></script>
 
   <title>vuxnq | Sweet Berries</title>
 </head>
