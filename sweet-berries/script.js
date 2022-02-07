@@ -3,9 +3,9 @@ fetch('https://api.mcsrvstat.us/2/mc.vuxnq.me')
   .then(res => res.json())
   .then(data => {
     if (data.online === true) {
-      document.getElementById('status').innerHTML = 'Server is currently online so you can hop on :)<br> There is ' + data.players.online + ' player(s) online';
+      document.getElementById('status').innerHTML = 'Server is currently online so you can hop on <br> There is ' + data.players.online + ' player(s) online';
     } else {
-      document.getElementById('status').innerHTML = 'Server is currently offline :(';
+      document.getElementById('status').innerHTML = 'Server is currently offline';
     }
   })
 
