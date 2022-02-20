@@ -560,6 +560,14 @@ article#yeezus {
   background-position: center;
 }
 
+article#icons {
+  background-image: linear-gradient(var(--bg4o), var(--bg2)),
+    linear-gradient(90deg, transparent, var(--a2)),
+    url(assets/images/icons.png);
+  background-size: cover;
+  background-position: center;
+}
+
 /* Small Desktop Screen */
 @media screen and (max-width: 1000px) {
   header {
