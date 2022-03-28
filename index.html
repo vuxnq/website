@@ -5,134 +5,54 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#2E3440">
 
   <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon//favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon//favicon-16x16.png">
-  <link rel="manifest" href="assets/favicon//site.webmanifest">
-  <link rel="mask-icon" href="assets/favicon//safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#315239">
+  <meta name="theme-color" content="#315239">
 
   <!-- styles -->
   <link rel="stylesheet" href="style.css">
 
   <!-- scripts -->
-  <script src="https://kit.fontawesome.com/fdd79f7c58.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/fdd79f7c58.js" crossorigin="anonymous"></script>
 
   <title>vuxnq</title>
 </head>
 
 <body>
-  <!-- background -->
-  <div class=background>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <div class="titlescreen">
-    <header>
-      <div>
-        <a class="header" href="/">vuxnq</a>
-      </div>
-      <div id="stretch"></div>
-      <div>
-        <a href="https://twitter.com/vuxnqik/" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://youtube.com/cirix/" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://instagram.com/vuxnq/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/vuxnq/" target="_blank"><i class="fab fa-github-alt"></i></a>
-      </div>
-    </header>
-  </div>
-  <div id="arrow"><a class="reset" href="#introduction"><i class="fas fa-chevron-down"></i></a></div>
+  <nav>
+    <ul class="navigation">
+      <li><a href="/" class="checked"><i class="fa-solid fa-house"></i></a></li>
+      <li><a href="projects/"><i class="fa-solid fa-folder"></i></a></li>
+    </ul>
+    <ul>
+      <li><a href="https://twitter.com/vuxnqik/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://youtube.com/cirix/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="https://instagram.com/vuxnq/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://github.com/vuxnq/" target="_blank"><i class="fab fa-github-alt"></i></a></li>
+    </ul>
+  </nav>
   <div class="wrapper">
-    <main>
-      <section id="introduction">
-        <h1><i class="fas fa-handshake"></i> Intrduction</h1>
-        <article>
-          <h2>Hello, friend.</h2>
-          <p>I'm vuxnq a breathing and living creature with ordinary goals.
-            I'm also the person who created this website.</p>
-          <p>In my spare time you can find me vibing to my <a
-              href="https://open.spotify.com/playlist/6V6Vo0m2hQ7W1jR9luijTg?si=c98c695ddb4b432f"
-              target="_blank">playlist</a>. Feel free to check it.</p>
-          <p>You can find my <a href="#projects">projects</a> I have been working on below.</p>
-        </article>
-      </section>
-      <section id="projects">
-        <h1><i class="fas fa-briefcase"></i> Projects</h1>
-        <div class="expand">
-          <article id="icons">
-            <h2>Icons</h2>
-            <p>iOS icon themes</p>
-          </article>
-          <a class="big-button" href="../icons/">
-            <i class="fas fa-arrow-right"></i> more
-          </a>
-        </div>
-        <div class="expand">
-          <article id="sweet-berries">
-            <h2>Sweet Berries</h2>
-            <p>A Minecraft server</p>
-          </article>
-          <a class="big-button" href="../sweet-berries/">
-            <i class="fas fa-arrow-right"></i> more
-          </a>
-        </div>
-        <div class="expand">
-          <article id="yeezus">
-            <h2>Yeezus</h2>
-            <p>Emoji art</p>
-          </article>
-          <a class="big-button" href="../yeezus/">
-            <i class="fas fa-arrow-right"></i> more
-          </a>
-        </div>
-      </section>
-      <section>
-        <h1><i class="fas fa-quote-right"></i> Kanye</h1>
-        <article id="kanye">
-          <h2 id="quote">"I’m nice at ping pong"</h2>
-          <p>-ye</p>
-        </article>
-      </section>
-      <section id="links">
-        <h1><i class="fas fa-external-link-square-alt"></i> Links</h1>
-        <article>
-          <h2>Friends</h2>
-          <div class="align-center">
-            <a class="button" href="https://homie1313.github.io/" target="_blank">mejr</a>
-            <a class="button" href="https://fryerzabijak.github.io/" target="_blank">pepa</a>
-            <a class="button" href="http://34.159.218.104/" target="_blank">beetch</a>
-            <a class="button" href="http://34.159.81.138/" target="_blank">jan</a>
-            <a class="button" href="https://radeceeek.github.io/" target="_blank">moucha</a>
-          </div>
-        </article>
-      </section>
-    </main>
+    <section>
+      <h1>Intrduction</h1>
+      <article>
+        <h2>Hello, friend.</h2>
+        <p>I'm vuxnq a breathing and living creature with ordinary goals.
+          I'm also the person who created this website.</p>
+        <p>In my spare time you can find me vibing to my <a
+            href="https://open.spotify.com/playlist/6V6Vo0m2hQ7W1jR9luijTg?si=c98c695ddb4b432f"
+            target="_blank">playlist</a>. Feel free to check it.</p>
+      </article>
+    </section>
     <footer>
-      <div class="footer">
-        <ul>
-          <li><a href="https://last.fm/user/vuxnq/" target="_blank">last.fm</a></li>
-        </ul>
-      </div>
-      <div class="footer">
-        <div id="copyright">© 2022 vuxnq</div>
-      </div>
+      <p>© 2022 vuxnq</p>
     </footer>
   </div>
-  <div id="cursor"></div>
 </body>
 
 </html>
