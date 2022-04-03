@@ -27,7 +27,7 @@
   src: url(assets/font/Bristol.otf);
 }
 
-/* scrollbar */
+/* scrollbar & selection */
 ::-webkit-scrollbar {
   background-color: transparent;
   width: 10px;
@@ -45,6 +45,10 @@
 ::-webkit-scrollbar-corner,
 ::-webkit-scrollbar-button {
   background-color: transparent;
+}
+
+::selection {
+  background-color: var(--highlight);
 }
 
 body {
@@ -70,7 +74,6 @@ article {
 }
 
 /* shadow */
-
 nav,
 article {
   box-shadow: 0 10px 25px var(--shadow);
@@ -115,18 +118,19 @@ nav a {
   color: var(--accent);
 }
 
-nav a:hover {
+nav a:hover, nav a:focus {
   transition: 0.2s;
-  transform: translateY(-12px) scale(1.5);
-  margin-inline: 12px;
+  background-color: var(--highlight);
+  color: var(--foreground);
+  transform: translateY(-8px);
+  outline: none;
 }
 
 nav a:active {
   transition: 0.1s;
   background-color: var(--accent);
   color: var(--foreground);
-  transform: translateY(6px) scale(1);
-  margin-inline: 0px;
+  transform: translateY(4px);
 }
 
 nav a.checked {
@@ -143,7 +147,7 @@ nav a.checked {
 
 article {
   border-radius: 25px;
-  padding: 50px;
+  padding: 6%;
   margin-bottom: 25px;
 }
 
@@ -156,19 +160,22 @@ article p {
 
 article a {
   transition: 0.2s;
-  color: var(--accent);
+  color: var(--foreground);
   text-decoration: none;
-  background-color: var(--foreground);
+  background-color: var(--highlight);
   padding: 0px 5px;
   border-radius: 5px;
 }
 
-article a:hover {
+article a:hover, article a:focus {
+  background-color: var(--accent);
+  outline: none;
 }
 
 article a:active {
-  background-color: var(--accent);
-  color: var(--foreground);
+  transition: 0.1s;
+  background-color: var(--foreground);
+  color: var(--accent);
 }
 
 h1 {
@@ -196,31 +203,28 @@ footer p {
 }
 
 .links {
-  padding: 30px;
+  padding: 0;
 }
 
 .links a {
   display: block;
-  background: none;
-  color: var(--foreground);
   font-size: 20px;
-  padding: 18px;
+  padding: 20px;
   border-radius: 12px;
-}
-
-.links a:hover {
-  background-color: var(--highlight);
-}
-
-.links a:active {
-  background-color: var(--accent);
+  margin: 3%;
 }
 
 .links h2 {
   display: inline;
   font-size: inherit;
   font-weight: 600;
-  margin-right: 5px;
+  margin-right: 1em;
+}
+
+.links p {
+  display: inline;
+  margin-right: 1em;
+  font-weight: 100;
 }
 
 .links #icons {
@@ -229,13 +233,6 @@ footer p {
 
 .links #sweet-berries {
   cursor: url("assets/cursors/sweet-berries.png"), auto;
-}
-
-/* Small Desktop Screen */
-@media screen and (max-width: 1000px) {
-  article {
-    padding: 5%;
-  }
 }
 
 /* Mobile Phones Portrait */
@@ -256,22 +253,13 @@ footer p {
     box-sizing: border-box;
     width: 85px;
   }
-
-  nav a:hover {
-    transform: translateY(0) scale(1);
-    margin-inline: 0;
-  }
-
+  
   .wrapper {
     margin-bottom: 200px;
   }
 
   footer {
     display: none;
-  }
-
-  .links {
-    padding: 3%;
   }
 
   .links h2 {
