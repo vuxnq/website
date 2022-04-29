@@ -182,13 +182,14 @@ section a:active {
 
 h1 {
   font-family: heading;
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
-  margin: 0;
+  margin: 0 0 20px 0;
 }
 
 h2 {
-  font-family: title;
+  font-family: heading;
+  font-size: 20px;
   margin: 5px 0;
 }
 
@@ -208,38 +209,44 @@ footer p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-items: center; 
+  justify-items: center;
 }
 
 #about img {
-  height: 100px;
+  height: 150px;
+  padding: 20px;
 }
 
 #projects a {
   display: block;
   font-size: 20px;
   padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#projects a:last-of-type{
+#projects a:first-of-type {
+  border-radius: 14px 14px 0 0;
+}
+
+#projects a:last-of-type {
+  border-radius: 0 0 14px 14px;
   margin-bottom: 0;
 }
 
-/* needs h1 padding-bottom */
+#projects a:only-of-type {
+  border-radius: 14px;
+}
 
 #projects h2 {
-  display: inline;
-  font-size: inherit;
   font-weight: 600;
-  margin-right: 1em;
+  margin: 0;
 }
 
 #projects p {
-  display: inline;
-  margin-right: 1em;
   font-weight: 500;
+  margin: 0;
 }
 
 #about #spotify-playlist {
@@ -252,6 +259,12 @@ footer p {
 
 #projects #sweet-berries {
   cursor: url("assets/cursors/sweet-berries.png"), auto;
+}
+
+#kanye {
+  background-image: linear-gradient(var(--edge),var(--shadow)), url("assets/background/kanye-sus.gif");
+  background-size: cover;
+  background-position: center;
 }
 
 /* Mobile Phones Portrait */
@@ -282,7 +295,7 @@ footer p {
     display: none;
   }
 
-  #projects h2 {
+  #projects a {
     display: block;
   }
 }
