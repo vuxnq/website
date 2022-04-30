@@ -3,8 +3,8 @@
   --color1: #315239;
   --opacity: #f9e0db88;
   --foreground: #fde9ea;
-  --accent: #c27777;
-  --highlight: #c2777777;
+  --accent: #c46666;
+  --highlight: #c4666677;
   --edge: #fde9ea88;
   --shadow: #0a241188;
 }
@@ -123,8 +123,37 @@ nav a:focus {
   transition: 0.2s;
   background-color: var(--highlight);
   color: var(--foreground);
-  transform: translateY(-8px);
+  transform: translateY(-10px);
   outline: none;
+}
+
+.tooltip {
+  transition: 0.2s;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: 110%;
+  background-color: var(--opacity);
+  border-radius: 8px;
+  padding: 6px;
+  color: var(--foreground);
+  font-size: 18px;
+  line-height: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav a:hover .tooltip,
+nav a:focus .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+nav a:active .tooltip {
+  transition: 0s;
+  visibility: hidden;
+  opacity: 0;
 }
 
 nav a:active {
@@ -194,6 +223,7 @@ h2 {
 }
 
 footer {
+  pointer-events: none;
   font-family: handwritten;
   font-size: 20px;
   position: fixed;
@@ -213,6 +243,7 @@ footer p {
 }
 
 #about img {
+  pointer-events: none;
   height: 150px;
   padding: 20px;
 }
@@ -262,7 +293,8 @@ footer p {
 }
 
 #kanye {
-  background-image: linear-gradient(var(--edge),var(--shadow)), url("assets/background/kanye-sus.gif");
+  background-image: linear-gradient(var(--edge), var(--shadow)),
+    url("assets/background/kanye-sus.gif");
   background-size: cover;
   background-position: center;
 }
