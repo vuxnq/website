@@ -120,6 +120,10 @@ p {
 }
 
 /* Form */
+.grecaptcha-badge {
+  display: none;
+}
+
 #whitelist form {
   height: 60vh;
   box-sizing: border-box;
