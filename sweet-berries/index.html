@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#9f00a7">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- scripts -->
+  <script src="scripts.js"></script>
+
+  <title>Sweet Berries</title>
+</head>
+
+<body>
+  <img id="logo" src="assets/images/logo.png" alt="logo">
+  <main>
+    <section id="box-top">
+      <div>
+        <h1>Sweet Berries</h1>
+        <p>A Minecraft Server</p>
+      </div>
+    </section>
+    <a id="box-image" href="#images">
+      <h2>Images</h2>
+    </a>
+    <section id="box-info">
+      <div>
+        <h2>Status</h2>
+        <p id="status">receiving data...</p>
+      </div>
+    </section>
+    <a id="box-whitelist" href="#whitelist">
+      <div>
+        <h2>Whitelist</h2>
+        <p>Apply</p>
+      </div>
+    </a>
+    <section id="box-ip">
+      <div>
+        <h2>Join now</h2>
+        <p>mc.vuxnq.me</p>
+      </div>
+    </section>
+  </main>
+  <h2 class="title">Images</h2>
+  <div id="images">
+    <img src="assets/images/hub1.png" alt="hub1">
+    <img src="assets/images/hub2.png" alt="hub2">
+    <img src="assets/images/hub3.png" alt="hub3">
+    <img src="assets/images/hub4.png" alt="hub4">
+  </div>
+  <h2 class="title">Whitelist</h2>
+  <div id="whitelist">
+    <form action="https://getform.io/f/0e1f6009-c2dd-4d53-aa8a-a3ebcd76dd55" method="post">
+      <input type="text" name="username" placeholder="username" required>
+      <input type="email" name="email" placeholder="email" required>
+      <input type="hidden" id="captchaResponse" name="g-recaptcha-response">
+      <button type="submit">Apply</button>
+    </form>
+  </div>
+</body>
+
+</html>

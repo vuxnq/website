@@ -1,0 +1,172 @@
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+@font-face {
+  font-family: regular;
+  src: url(/assets/font/Outfit.ttf);
+}
+@font-face {
+  font-family: minecraft;
+  src: url(assets/fonts/Minecraft.woff);
+}
+
+body {
+  margin: 0;
+  background-color: #0c0910;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: regular;
+}
+
+main {
+  box-sizing: border-box;
+  padding: 10px;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 4fr 3fr 3fr;
+}
+
+section,
+a {
+  transition: 0.2s;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 75px;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  margin: 25px;
+}
+
+h1 {
+  font-family: minecraft;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+h2.title {
+  color: #fff;
+  text-align: center;
+}
+
+p {
+  font-size: 2em;
+  margin: 0;
+}
+
+#logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+}
+
+#box-top {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  background: none;
+  color: #fff;
+}
+
+#box-image {
+  grid-row: 2/4;
+  background-image: url("assets/images/preview.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#box-info {
+  grid-column: 2/4;
+  background-color: #a576d4;
+}
+
+#box-whitelist {
+  background-color: #e475d1;
+}
+
+#box-ip {
+  background-color: #f387c2;
+}
+
+/* Images */
+#images {
+  box-sizing: border-box;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#images img {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border-radius: 75px;
+}
+
+/* Form */
+#whitelist form {
+  height: 60vh;
+  box-sizing: border-box;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+input {
+  margin: 10px;
+  border-radius: 75px;
+  padding: 50px;
+  font-size: 5em;
+  font-family: regular;
+  border: none;
+  outline: none;
+}
+
+input::placeholder {
+  color: #000;
+  opacity: 0.25;
+}
+
+#whitelist button {
+  transition: 0.2s;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  margin: 10px;
+  border-radius: 75px;
+  font-size: 5em;
+  font-weight: bold;
+  font-family: regular;
+  background-color: #d3f387;
+}
+#whitelist button:hover {
+  margin: 25px;
+}
+
+input[name="username"] {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: #f3b887;
+}
+
+input[name="email"] {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #f3e387;
+}

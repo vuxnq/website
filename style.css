@@ -15,10 +15,6 @@
   src: url(assets/font/Corben.ttf);
 }
 @font-face {
-  font-family: title;
-  src: url(assets/font/Montserrat.ttf);
-}
-@font-face {
   font-family: common;
   src: url(assets/font/Outfit.ttf);
 }
@@ -235,17 +231,17 @@ footer p {
   margin: 0;
 }
 
-#about .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+#about .flex {
+  display: flex;
   align-items: center;
-  justify-items: center;
 }
 
 #about img {
+  display: block;
   pointer-events: none;
-  height: 150px;
-  padding: 20px;
+  height: 200px;
+  border-radius: 14px;
+  margin-right: 20px;
 }
 
 #projects a {
@@ -321,6 +317,10 @@ footer p {
   main {
     margin-bottom: 200px;
     margin-top: 20px;
+  }
+
+  #about .flex {
+    display: block;
   }
 
   footer {
