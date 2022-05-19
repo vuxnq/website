@@ -5,7 +5,7 @@
   --foreground: #fde9ea;
   --accent: #c46666;
   --highlight: #c4666677;
-  --edge: #fde9ea88;
+  --edge: #fde9eaaa;
   --shadow: #0a241188;
 }
 
@@ -62,7 +62,9 @@ body {
 
 /* glassmorphism */
 nav,
-main {
+#about,
+#tabs,
+#content {
   background-color: var(--opacity);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -71,7 +73,7 @@ main {
 
 /* shadow */
 nav,
-main {
+#about {
   box-shadow: 0 10px 25px var(--shadow);
 }
 
@@ -171,12 +173,6 @@ nav a.checked {
   height: 80vh;
 }
 
-main {
-  box-sizing: border-box;
-  border-radius: 24px;
-  padding: 16px;
-}
-
 main p {
   font-size: 20px;
   font-weight: 500;
@@ -232,6 +228,9 @@ footer p {
 
 #about {
   width: 525px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  padding: 16px;
 }
 
 #about .flex {
@@ -248,41 +247,44 @@ footer p {
 }
 
 #projects {
-  width: 600px;
-}
-
-#projects a {
-  display: block;
-  font-size: 20px;
-  padding: 20px;
+  width: 800px;
+  height: 75%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-#projects a:first-of-type {
-  border-radius: 12px 12px 0 0;
+#tabs {
+  box-sizing: border-box;
+  width: 30%;
+  border-radius: 24px 0 0 24px;
+  border-right: none;
+  padding: 16px;
 }
 
-#projects a:last-of-type {
-  border-radius: 0 0 12px 12px;
-  margin-bottom: 0;
+#tabs a {
+  font-size: 20px;
+  display: block;
+  background-color: unset;
 }
 
-#projects a:only-of-type {
-  border-radius: 12px;
+#tabs a:hover,
+#tabs a:focus {
+  background-color: var(--accent);
+  outline: none;
+}
+#tabs a:active {
+  transition: 0.1s;
+  background-color: var(--foreground);
+  color: var(--accent);
 }
 
-#projects h2 {
-  font-weight: 600;
-  margin: 0;
+#content {
+  background-color: var(--edge);
+  border-radius: 0 24px 24px 0;
+  border-left: none;
+  width: 70%;
 }
 
-#projects p {
-  font-weight: 500;
-  margin: 0;
-}
-
+/* cursors */
 #about #spotify-playlist {
   cursor: url("assets/cursors/spotify-playlist.png"), auto;
 }
@@ -294,7 +296,6 @@ footer p {
 #projects #sweet-berries {
   cursor: url("assets/cursors/sweet-berries.png"), auto;
 }
-
 
 /* Mobile Phones Portrait */
 @media screen and (max-width: 780px) {
