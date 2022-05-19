@@ -62,7 +62,7 @@ body {
 
 /* glassmorphism */
 nav,
-section {
+main {
   background-color: var(--opacity);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -71,7 +71,7 @@ section {
 
 /* shadow */
 nav,
-section {
+main {
   box-shadow: 0 10px 25px var(--shadow);
 }
 
@@ -164,27 +164,26 @@ nav a.checked {
   color: var(--foreground);
 }
 
+.center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
 main {
-  height: min-content;
-  grid-template-columns: 1fr 1fr;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  padding: 16px;
 }
 
-section {
-  border-radius: 25px;
-  padding: 3%;
-  margin: 10px;
-}
-
-section p {
+main p {
   font-size: 20px;
   font-weight: 500;
   margin: 5px 0;
 }
 
-section a {
+main a {
   transition: 0.2s;
   color: var(--foreground);
   text-decoration: none;
@@ -193,13 +192,13 @@ section a {
   border-radius: 5px;
 }
 
-section a:hover,
-section a:focus {
+main a:hover,
+main a:focus {
   background-color: var(--accent);
   outline: none;
 }
 
-section a:active {
+main a:active {
   transition: 0.1s;
   background-color: var(--foreground);
   color: var(--accent);
@@ -231,6 +230,10 @@ footer p {
   margin: 0;
 }
 
+#about {
+  width: 525px;
+}
+
 #about .flex {
   display: flex;
   align-items: center;
@@ -240,8 +243,12 @@ footer p {
   display: block;
   pointer-events: none;
   height: 200px;
-  border-radius: 14px;
+  border-radius: 12px;
   margin-right: 20px;
+}
+
+#projects {
+  width: 600px;
 }
 
 #projects a {
@@ -254,16 +261,16 @@ footer p {
 }
 
 #projects a:first-of-type {
-  border-radius: 14px 14px 0 0;
+  border-radius: 12px 12px 0 0;
 }
 
 #projects a:last-of-type {
-  border-radius: 0 0 14px 14px;
+  border-radius: 0 0 12px 12px;
   margin-bottom: 0;
 }
 
 #projects a:only-of-type {
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
 #projects h2 {
@@ -288,12 +295,6 @@ footer p {
   cursor: url("assets/cursors/sweet-berries.png"), auto;
 }
 
-#kanye {
-  background-image: linear-gradient(var(--edge), var(--shadow)),
-    url("assets/background/kanye-sus.gif");
-  background-size: cover;
-  background-position: center;
-}
 
 /* Mobile Phones Portrait */
 @media screen and (max-width: 780px) {
@@ -305,18 +306,9 @@ footer p {
     display: block;
   }
 
-  nav ul.navigation li {
-    box-sizing: border-box;
-  }
-
   nav ul.navigation a {
     box-sizing: border-box;
     width: 135px;
-  }
-
-  main {
-    margin-bottom: 200px;
-    margin-top: 20px;
   }
 
   #about .flex {
