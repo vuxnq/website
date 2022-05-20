@@ -21,6 +21,7 @@
 
   <!-- scripts -->
   <script src="https://kit.fontawesome.com/fdd79f7c58.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 
   <title>vuxnq</title>
 </head>
@@ -29,10 +30,12 @@
   <nav>
     <ul class="navigation">
       <li>
-        <a href="/" class="checked"><span class="tooltip">home</span><i class="fa-solid fa-house"></i></a>
+        <a class="app checked" onclick="page(event, 'about')"><span class="tooltip">home</span><i
+            class="fa-solid fa-house"></i></a>
       </li>
       <li>
-        <a href="/projects/"><span class="tooltip">projects</span><i class="fa-solid fa-folder"></i></a>
+        <a class="app" onclick="page(event, 'projects')"><span class="tooltip">projects</span><i
+            class="fa-solid fa-folder"></i></a>
       </li>
     </ul>
     <ul>
@@ -69,6 +72,27 @@
         <p>always vibing to my <a id="spotify-playlist"
             href="https://open.spotify.com/playlist/6V6Vo0m2hQ7W1jR9luijTg?si=c98c695ddb4b432f"
             target="_blank">playlist</a>. feel free to check it.</p>
+      </div>
+    </main>
+    <main id="projects">
+      <div id="tabs">
+        <a class="link checked" id="icons-link" onclick="tab(event, 'icons')">Icons</a>
+        <a class="link" id="sweet-berries-link" onclick="tab(event, 'sweet-berries')">Sweet Berries</a>
+      </div>
+      <div class="content" id="icons">
+        <h1>Icons</h1>
+        <p>2022</p>
+        <p>a colorful set of custom icons for ios</p>
+        <img src="assets/images/icons.png" alt="thumbnail">
+        <a href="../icons/">more</a>
+      </div>
+      <div class="content" id="sweet-berries">
+        <h1>Sweet Berries</h1>
+        <p>2021</p>
+        <p>a minecraft server</p>
+        <p>Sweet Berries offers a wide selection of servers ranging from Survival to... Hub? Can that be counted as a
+          server?</p>
+        <a href="../sweet-berries/">more</a>
       </div>
     </main>
   </div>

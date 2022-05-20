@@ -175,6 +175,10 @@ nav a.checked {
   height: 80vh;
 }
 
+main {
+  display: none;
+}
+
 main p {
   font-size: 20px;
   font-weight: 500;
@@ -230,7 +234,6 @@ footer p {
 }
 
 #about {
-  display: flex;
   align-items: center;
   width: 525px;
   box-sizing: border-box;
@@ -250,7 +253,6 @@ footer p {
   width: 600px;
   height: 300px;
   border-radius: 24px;
-  display: flex;
 }
 
 #projects div {
@@ -276,12 +278,10 @@ footer p {
   background-color: var(--highlight);
   color: var(--foreground);
 }
-
 #tabs a:active {
   background-color: var(--accent);
   color: var(--foreground);
 }
-
 #tabs a.checked {
   background-color: var(--foreground);
   color: var(--accent);
@@ -316,6 +316,15 @@ footer p {
   margin-bottom: 5px;
 }
 
+/* display first */
+main:first-of-type {
+  display: flex;
+}
+
+.content:nth-of-type(2) {
+  display: block;
+}
+
 /* cursors */
 #about #spotify-playlist {
   cursor: url("assets/cursors/spotify-playlist.png"), auto;
@@ -331,10 +340,6 @@ footer p {
 
 /* Mobile Phones Portrait */
 @media screen and (max-width: 780px) {
-  body {
-    background-image: none;
-  }
-
   nav ul {
     display: block;
   }
