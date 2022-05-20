@@ -51,9 +51,9 @@ body {
   margin: 0;
   background-color: var(--color1);
   background-image: url("assets/background/plastic.png"),
-    url("assets/background/monstera.png");
+    url("assets/background/curve.png"), url("assets/background/monstera.png");
   background-repeat: no-repeat;
-  background-position: left bottom, right bottom;
+  background-position: left bottom, bottom, right bottom;
   background-size: contain;
   background-attachment: fixed;
   color: var(--foreground);
@@ -64,7 +64,7 @@ body {
 nav,
 #about,
 #tabs,
-#content {
+.content {
   background-color: var(--opacity);
   backdrop-filter: saturate(2) blur(15px);
   -webkit-backdrop-filter: saturate(2) blur(15px);
@@ -73,7 +73,8 @@ nav,
 
 /* shadow */
 nav,
-#about {
+#about,
+#projects {
   box-shadow: 0 10px 25px var(--shadow);
 }
 
@@ -139,6 +140,7 @@ nav a:focus {
   line-height: 18px;
   left: 50%;
   transform: translateX(-50%);
+  backdrop-filter: saturate(5);
 }
 
 nav a:hover .tooltip,
@@ -245,6 +247,7 @@ footer p {
 #projects {
   width: 600px;
   height: 300px;
+  border-radius: 24px;
   display: flex;
 }
 
@@ -279,13 +282,13 @@ footer p {
   border-radius: 12px;
 }
 
-#content {
-  background-color: var(--foreground);
+.content {
+  backdrop-filter: saturate(2.3) blur(50px);
+  -webkit-backdrop-filter: saturate(2.3) blur(50px);
   border-radius: 0 24px 24px 0;
   border-left: none;
   width: 70%;
   text-align: justify;
-  color: var(--accent);
 }
 
 /* cursors */
