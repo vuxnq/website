@@ -2,7 +2,7 @@
 :root {
   --color1: #315239;
   --opacity: #f9e0db88;
-  --light: #f9e0db55;
+  --light: #f9e0db44;
   --foreground: #fde9ea;
   --accent: #c46666;
   --highlight: #c4666677;
@@ -27,11 +27,11 @@
 /* scrollbar & selection */
 ::-webkit-scrollbar {
   background-color: transparent;
-  width: 10px;
+  width: 7px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--opacity);
-  border-radius: 10px;
+  border-radius: 7px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--foreground);
@@ -278,7 +278,6 @@ footer p {
 }
 
 #tabs a:active {
-
   background-color: var(--accent);
   color: var(--foreground);
 }
@@ -307,6 +306,14 @@ footer p {
   border-left: none;
   width: 70%;
   text-align: justify;
+  overflow-y: scroll;
+}
+
+.content img {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 5px;
 }
 
 /* cursors */
