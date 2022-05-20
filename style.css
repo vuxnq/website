@@ -2,6 +2,7 @@
 :root {
   --color1: #315239;
   --opacity: #f9e0db88;
+  --light: #f9e0db55;
   --foreground: #fde9ea;
   --accent: #c46666;
   --highlight: #c4666677;
@@ -162,9 +163,9 @@ nav a:active {
   transform: translateY(4px);
 }
 
-.checked {
-  background-color: var(--accent) !important;
-  color: var(--foreground) !important;
+nav a.checked {
+  background-color: var(--accent);
+  color: var(--foreground);
 }
 
 .center-center {
@@ -187,6 +188,7 @@ main a {
   background-color: var(--highlight);
   padding: 0px 5px;
   border-radius: 5px;
+  font-size: 20px;
 }
 
 main a:hover,
@@ -251,7 +253,7 @@ footer p {
   display: flex;
 }
 
-#projects section {
+#projects div {
   box-sizing: border-box;
   padding: 16px;
 }
@@ -267,22 +269,38 @@ footer p {
   padding: 6px 12px;
   display: block;
   border-radius: 0px;
+  background-color: var(--light);
+}
+
+#tabs a:hover {
+  background-color: var(--highlight);
+  color: var(--foreground);
+}
+
+#tabs a:active {
+
+  background-color: var(--accent);
+  color: var(--foreground);
+}
+
+#tabs a.checked {
+  background-color: var(--foreground);
+  color: var(--accent);
 }
 
 #tabs a:first-of-type {
   border-radius: 12px 12px 0 0;
 }
-
 #tabs a:last-of-type {
   border-radius: 0 0 12px 12px;
   margin-bottom: 0;
 }
-
 #tabs a:only-of-type {
   border-radius: 12px;
 }
 
 .content {
+  display: none;
   backdrop-filter: saturate(2.3) blur(50px);
   -webkit-backdrop-filter: saturate(2.3) blur(50px);
   border-radius: 0 24px 24px 0;
@@ -296,11 +314,11 @@ footer p {
   cursor: url("assets/cursors/spotify-playlist.png"), auto;
 }
 
-#tabs #icons {
+#tabs #icons-link {
   cursor: url("assets/cursors/icons.png"), auto;
 }
 
-#tabs #sweet-berries {
+#tabs #sweet-berries-link {
   cursor: url("assets/cursors/sweet-berries.png"), auto;
 }
 
