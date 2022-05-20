@@ -5,7 +5,7 @@
   --foreground: #fde9ea;
   --accent: #c46666;
   --highlight: #c4666677;
-  --edge: #fde9eaaa;
+  --edge: #fce7e8aa;
   --shadow: #0a241188;
 }
 
@@ -77,7 +77,6 @@ nav,
   box-shadow: 0 10px 25px var(--shadow);
 }
 
-h1,
 footer {
   text-shadow: 0 5px 5px var(--shadow);
 }
@@ -161,9 +160,9 @@ nav a:active {
   transform: translateY(4px);
 }
 
-nav a.checked {
-  background-color: var(--accent);
-  color: var(--foreground);
+.checked {
+  background-color: var(--accent) !important;
+  color: var(--foreground) !important;
 }
 
 .center-center {
@@ -202,15 +201,15 @@ main a:active {
 
 h1 {
   font-family: heading;
-  font-size: 30px;
+  font-size: 27px;
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 0;
 }
 
 h2 {
   font-family: heading;
   font-size: 20px;
-  margin: 5px 0;
+  margin: 0;
 }
 
 footer {
@@ -227,15 +226,12 @@ footer p {
 }
 
 #about {
+  display: flex;
+  align-items: center;
   width: 525px;
   box-sizing: border-box;
   border-radius: 24px;
   padding: 16px;
-}
-
-#about .flex {
-  display: flex;
-  align-items: center;
 }
 
 #about img {
@@ -247,34 +243,40 @@ footer p {
 }
 
 #projects {
-  width: 800px;
-  height: 75%;
+  width: 700px;
+  height: 65%;
   display: flex;
 }
 
-#tabs {
+#projects section {
   box-sizing: border-box;
+  padding: 16px;
+}
+
+#tabs {
   width: 30%;
   border-radius: 24px 0 0 24px;
   border-right: none;
-  padding: 16px;
 }
 
 #tabs a {
   font-size: 20px;
+  padding: 6px 12px;
   display: block;
-  background-color: unset;
+  border-radius: 0px;
 }
 
-#tabs a:hover,
-#tabs a:focus {
-  background-color: var(--accent);
-  outline: none;
+#tabs a:first-of-type {
+  border-radius: 12px 12px 0 0;
 }
-#tabs a:active {
-  transition: 0.1s;
-  background-color: var(--foreground);
-  color: var(--accent);
+
+#tabs a:last-of-type {
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 0;
+}
+
+#tabs a:only-of-type {
+  border-radius: 12px;
 }
 
 #content {
@@ -282,6 +284,8 @@ footer p {
   border-radius: 0 24px 24px 0;
   border-left: none;
   width: 70%;
+  text-align: justify;
+  text-shadow: 0 1px 3px var(--shadow);
 }
 
 /* cursors */
@@ -310,17 +314,5 @@ footer p {
   nav ul.navigation a {
     box-sizing: border-box;
     width: 135px;
-  }
-
-  #about .flex {
-    display: block;
-  }
-
-  footer {
-    display: none;
-  }
-
-  #projects a {
-    display: block;
   }
 }
