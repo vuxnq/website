@@ -66,8 +66,8 @@ nav,
 #tabs,
 #content {
   background-color: var(--opacity);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: saturate(2) blur(15px);
+  -webkit-backdrop-filter: saturate(2) blur(15px);
   border: 1px solid var(--edge);
 }
 
@@ -243,8 +243,8 @@ footer p {
 }
 
 #projects {
-  width: 700px;
-  height: 65%;
+  width: 600px;
+  height: 300px;
   display: flex;
 }
 
@@ -280,12 +280,12 @@ footer p {
 }
 
 #content {
-  background-color: var(--edge);
+  background-color: var(--foreground);
   border-radius: 0 24px 24px 0;
   border-left: none;
   width: 70%;
   text-align: justify;
-  text-shadow: 0 1px 3px var(--shadow);
+  color: var(--accent);
 }
 
 /* cursors */
@@ -293,11 +293,11 @@ footer p {
   cursor: url("assets/cursors/spotify-playlist.png"), auto;
 }
 
-#projects #icons {
+#tabs #icons {
   cursor: url("assets/cursors/icons.png"), auto;
 }
 
-#projects #sweet-berries {
+#tabs #sweet-berries {
   cursor: url("assets/cursors/sweet-berries.png"), auto;
 }
 
