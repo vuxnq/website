@@ -25,6 +25,14 @@
 }
 
 /* animations */
+@keyframes nav {
+  from {
+    transform: translateX(-50%) translateY(200%);
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+  }
+}
 @keyframes window {
   from {
     transform: scale(0.5) translateY(100%);
@@ -100,6 +108,7 @@ footer {
 
 /* navbar */
 nav {
+  animation: nav 0.4s;
   position: fixed;
   bottom: 25px;
   left: 50%;
@@ -132,8 +141,7 @@ nav a {
   color: var(--accent);
 }
 
-nav a:hover,
-nav a:focus {
+nav a:hover {
   transition: 0.2s;
   background-color: var(--highlight);
   color: var(--foreground);
@@ -156,11 +164,9 @@ nav a:focus {
   line-height: 18px;
   left: 50%;
   transform: translateX(-50%);
-  backdrop-filter: saturate(5);
 }
 
-nav a:hover .tooltip,
-nav a:focus .tooltip {
+nav a:hover .tooltip {
   visibility: visible;
   opacity: 1;
 }
@@ -211,8 +217,7 @@ section a {
   font-size: 20px;
 }
 
-section a:hover,
-section a:focus {
+section a:hover {
   background-color: var(--accent);
   outline: none;
 }
