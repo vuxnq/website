@@ -1,5 +1,6 @@
+// Switching windows
 function page(check, selected) {
-  var page = document.getElementsByTagName('main');
+  var page = document.getElementsByTagName('section');
   for (var i = 0; i < page.length; i++) {
     page[i].style.display = "none";
   }
@@ -11,6 +12,7 @@ function page(check, selected) {
   check.currentTarget.className += " checked"
 }
 
+// Switching tabs in projects
 function tab(check, selected) {
   var content = document.getElementsByClassName("content");
   for (var i = 0; i < content.length; i++) {
@@ -21,5 +23,5 @@ function tab(check, selected) {
     link[i].className = link[i].className.replace(" checked", "");
   }
   document.getElementById(selected).style.display = "block";
-  check.currentTarget.className += " checked"
+  check.currentTarget.className += " checked";
 }

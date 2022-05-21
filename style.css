@@ -24,6 +24,24 @@
   src: url(assets/font/Bristol.otf);
 }
 
+/* animations */
+@keyframes window {
+  from {
+    transform: scale(0.5) translateY(100%);
+    opacity: 0;
+    box-shadow: none;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes content {
+  from {
+    background-color: var(--opacity);
+  }
+}
+
 /* scrollbar & selection */
 ::-webkit-scrollbar {
   background-color: transparent;
@@ -63,9 +81,7 @@ body {
 
 /* glassmorphism */
 nav,
-#about,
-#tabs,
-.content {
+section {
   background-color: var(--opacity);
   backdrop-filter: saturate(2) blur(15px);
   -webkit-backdrop-filter: saturate(2) blur(15px);
@@ -74,8 +90,7 @@ nav,
 
 /* shadow */
 nav,
-#about,
-#projects {
+section {
   box-shadow: 0 10px 25px var(--shadow);
 }
 
@@ -133,7 +148,7 @@ nav a:focus {
   position: absolute;
   pointer-events: none;
   bottom: 110%;
-  background-color: var(--opacity);
+  background-color: var(--light);
   border-radius: 8px;
   padding: 6px;
   color: var(--foreground);
@@ -168,24 +183,25 @@ nav a.checked {
   color: var(--foreground);
 }
 
-.center-center {
+main {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
 }
 
-main {
+section {
+  animation: window 0.5s cubic-bezier(0.4, 0.2, 0.3, 1);
   display: none;
 }
 
-main p {
+section p {
   font-size: 20px;
   font-weight: 500;
   margin: 5px 0;
 }
 
-main a {
+section a {
   transition: 0.2s;
   color: var(--foreground);
   text-decoration: none;
@@ -195,13 +211,13 @@ main a {
   font-size: 20px;
 }
 
-main a:hover,
-main a:focus {
+section a:hover,
+section a:focus {
   background-color: var(--accent);
   outline: none;
 }
 
-main a:active {
+section a:active {
   transition: 0.1s;
   background-color: var(--foreground);
   color: var(--accent);
@@ -299,9 +315,9 @@ footer p {
 }
 
 .content {
+  animation: 0.5s content;
   display: none;
-  backdrop-filter: saturate(2.3) blur(50px);
-  -webkit-backdrop-filter: saturate(2.3) blur(50px);
+  background-color: var(--light);
   border-radius: 0 24px 24px 0;
   border-left: none;
   width: 70%;
@@ -317,7 +333,7 @@ footer p {
 }
 
 /* display first */
-main:first-of-type {
+section:first-of-type {
   display: flex;
 }
 
