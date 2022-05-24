@@ -351,6 +351,10 @@ section:first-of-type {
   cursor: url("assets/cursors/spotify-playlist.png"), auto;
 }
 
+#tabs #chliq-link {
+  cursor: url("assets/cursors/chliq.gif"), auto;
+}
+
 #tabs #icons-link {
   cursor: url("assets/cursors/icons.png"), auto;
 }
