@@ -20,11 +20,10 @@
 
   <!-- scripts -->
   <script src="https://kit.fontawesome.com/fdd79f7c58.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script defer src="script.js"></script>
 
   <!-- preload -->
   <link rel="preload" href="style.css" as="style">
-  <link rel="preload" href="script.js" as="script">
 
   <title>vuxnq</title>
 </head>
@@ -33,13 +32,13 @@
   <nav>
     <ul class="navigation">
       <li>
-        <a class="app checked" onclick="page(event, 'about')">
+        <a class="app checked" id="about-app">
           <span class="tooltip">about</span>
           <i class="fa-solid fa-user"></i>
         </a>
       </li>
       <li>
-        <a class="app" onclick="page(event, 'projects')">
+        <a class="app" id="projects-app">
           <span class="tooltip">projects</span>
           <i class="fa-solid fa-folder"></i>
         </a>
@@ -83,9 +82,9 @@
     </section>
     <section id="projects">
       <div id="tabs">
-        <a class="link checked" id="chliq-link" onclick="tab(event, 'chliq')">Chliq</a>
-        <a class="link" id="icons-link" onclick="tab(event, 'icons')">Icons</a>
-        <a class="link" id="sweet-berries-link" onclick="tab(event, 'sweet-berries')">Sweet Berries</a>
+        <a class="link checked" id="chliq-link">Chliq</a>
+        <a class="link" id="icons-link">Icons</a>
+        <a class="link" id="sweet-berries-link">Sweet Berries</a>
       </div>
       <div class="content" id="chliq">
         <h1>Chliq</h1>

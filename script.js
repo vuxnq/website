@@ -1,5 +1,14 @@
+// Buttons Onclicks
+document.getElementById("about-app").onclick = function () { page("about") };
+document.getElementById("projects-app").onclick = function () { page("projects") };
+
+document.getElementById("chliq-link").onclick = function () { tab('chliq') };
+document.getElementById("icons-link").onclick = function () { tab('icons') };
+document.getElementById("sweet-berries-link").onclick = function () { tab('sweet-berries') };
+
+
 // Switching windows
-function page(check, selected) {
+function page(selected) {
   var page = document.getElementsByTagName('section');
   for (var i = 0; i < page.length; i++) {
     page[i].style.display = "none";
@@ -9,11 +18,11 @@ function page(check, selected) {
     app[i].className = app[i].className.replace(" checked", "");
   }
   document.getElementById(selected).style.display = "flex";
-  check.currentTarget.className += " checked"
+  document.getElementById(selected + "-app").className += " checked";
 }
 
 // Switching tabs in projects
-function tab(check, selected) {
+function tab(selected) {
   var content = document.getElementsByClassName("content");
   for (var i = 0; i < content.length; i++) {
     content[i].style.display = "none";
@@ -23,5 +32,5 @@ function tab(check, selected) {
     link[i].className = link[i].className.replace(" checked", "");
   }
   document.getElementById(selected).style.display = "block";
-  check.currentTarget.className += " checked";
+  document.getElementById(selected + "-link").className += " checked";
 }
