@@ -2,6 +2,7 @@
 document.getElementById("about-app").onclick = function () { page("about") };
 document.getElementById("projects-app").onclick = function () { page("projects") };
 
+document.getElementById("radiohead-link").onclick = function () { tab('radiohead') };
 document.getElementById("chliq-link").onclick = function () { tab('chliq') };
 document.getElementById("icons-link").onclick = function () { tab('icons') };
 document.getElementById("sweet-berries-link").onclick = function () { tab('sweet-berries') };
