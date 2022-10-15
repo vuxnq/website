@@ -361,6 +361,7 @@ section:first-of-type {
   cursor: url("assets/cursors/sweet-berries.webp"), auto;
 }
 
+/* hover */
 @media (hover: hover) and (pointer: fine) {
   nav a:hover {
     transition: 0.2s;
@@ -387,9 +388,13 @@ section:first-of-type {
   }
 }
 
-
 /* Mobile Phones Portrait */
 @media screen and (max-width: 780px) {
+  body {
+    background-image: url("assets/background/monstera.webp");
+    background-position: right bottom;
+  }
+
   main {
     align-items: flex-start;
     margin-top: 5vw;
