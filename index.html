@@ -21,6 +21,13 @@
   <!-- scripts -->
   <script src="https://kit.fontawesome.com/fdd79f7c58.js" crossorigin="anonymous"></script>
   <script defer src="script.js"></script>
+  <script>
+    fetch('https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=vuxnq&api_key=70da5f72ca8ddc45015f96f2a0369819&limit=10&nowplaying=true&format=json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('nowplaying').innerHTML = '&quot' + 'data.recenttracks.track.0.name' + '&quot';
+      })
+  </script>
 
   <!-- preload -->
   <link rel="preload" href="style.css" as="style">
@@ -79,6 +86,7 @@
           <p>always vibing to my <a id="spotify-playlist"
               href="https://open.spotify.com/playlist/6V6Vo0m2hQ7W1jR9luijTg?si=c98c695ddb4b432f"
               target="_blank">playlist</a>. feel free to check it.</p>
+              <span id="nowplaying"></span>
         </div>
       </article>
     </section>
