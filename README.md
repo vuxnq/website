@@ -1,3 +1,3 @@
 # vuxnq.me
-[![thumbnail](assets/images/thumbnail.png)](https://vuxnq.me/)
+[![thumbnail](assets/images/thumbnail.webp)](https://vuxnq.me/)
 🌱
