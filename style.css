@@ -54,9 +54,10 @@
 ::-webkit-scrollbar {
   background-color: transparent;
   width: 7px;
+  height: 9px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--opacity);
+  background-color: var(--edge);
   border-radius: 7px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -75,6 +76,12 @@
   color: var(--highlight);
 }
 
+/* scrollbar fix firefox */
+* {
+  scrollbar-color: var(--edge) transparent;
+  scrollbar-width: thin;
+}
+
 body {
   margin: 0;
   background-color: var(--background);
@@ -86,13 +93,11 @@ body {
   background-attachment: fixed;
   color: var(--foreground);
   font-family: common;
-  /* scrollbar fix firefox */
-  scrollbar-color: var(--opacity) transparent;
 }
 
 /* glassmorphism */
 nav,
-section {
+article {
   background-color: var(--opacity);
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
@@ -101,7 +106,7 @@ section {
 
 /* shadow */
 nav,
-section {
+article {
   box-shadow: 0 12px 32px var(--shadow);
 }
 
@@ -144,14 +149,6 @@ nav a {
   color: var(--foreground);
 }
 
-nav a:hover {
-  transition: 0.2s;
-  background-color: var(--accent);
-  color: var(--highlight);
-  transform: translateY(-10px);
-  outline: none;
-}
-
 .tooltip {
   transition: 0.2s;
   visibility: hidden;
@@ -169,11 +166,6 @@ nav a:hover {
   transform: translateX(-50%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-}
-
-nav a:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
 }
 
 nav a:active .tooltip {
@@ -202,18 +194,23 @@ main {
 }
 
 section {
-  animation: window 0.5s cubic-bezier(0.4, 0.2, 0.3, 1);
   display: none;
-  margin: 25px;
 }
 
-section p {
+article {
+  animation: window 0.5s cubic-bezier(0.4, 0.2, 0.3, 1);
+  max-width: 90vw;
+  border-radius: 24px;
+  display: flex;
+}
+
+article p {
   font-size: 20px;
   font-weight: 500;
   margin: 5px 0;
 }
 
-section a {
+article a {
   transition: 0.2s;
   color: var(--shadow);
   text-decoration: none;
@@ -223,13 +220,7 @@ section a {
   font-size: 20px;
 }
 
-section a:hover {
-  background-color: var(--accent);
-  color: var(--highlight);
-  outline: none;
-}
-
-section a:active {
+article a:active {
   transition: 0.1s;
   background-color: var(--foreground);
   color: var(--accent);
@@ -261,11 +252,10 @@ footer p {
   margin: 0;
 }
 
-#about {
+#about article {
   align-items: center;
   width: 525px;
   box-sizing: border-box;
-  border-radius: 24px;
   padding: 16px;
 }
 
@@ -277,10 +267,9 @@ footer p {
   margin-right: 20px;
 }
 
-#projects {
+#projects article {
   width: 600px;
   height: 300px;
-  border-radius: 24px;
 }
 
 #projects div {
@@ -292,6 +281,7 @@ footer p {
   width: 30%;
   border-radius: 24px 0 0 24px;
   border-right: none;
+  overflow-y: scroll;
 }
 
 #tabs a {
@@ -303,10 +293,6 @@ footer p {
   color: var(--foreground);
 }
 
-#tabs a:hover {
-  background-color: var(--accent);
-  color: var(--highlight);
-}
 #tabs a:active {
   background-color: var(--foreground);
   color: var(--accent);
@@ -375,8 +361,40 @@ section:first-of-type {
   cursor: url("assets/cursors/sweet-berries.webp"), auto;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover {
+    transition: 0.2s;
+    background-color: var(--accent);
+    color: var(--highlight);
+    transform: translateY(-10px);
+    outline: none;
+  }
+
+  nav a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  article a:hover {
+    background-color: var(--accent);
+    color: var(--highlight);
+    outline: none;
+  }
+
+  #tabs a:hover {
+    background-color: var(--accent);
+    color: var(--highlight);
+  }
+}
+
+
 /* Mobile Phones Portrait */
 @media screen and (max-width: 780px) {
+  main {
+    align-items: flex-start;
+    margin-top: 5vw;
+  }
+
   nav ul {
     display: block;
   }
@@ -384,5 +402,54 @@ section:first-of-type {
   nav ul.navigation a {
     box-sizing: border-box;
     width: 135px;
+  }
+
+  footer {
+    display: none;
+  }
+
+  article {
+    display: block;
+  }
+  #about img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  #projects article {
+    height: fit-content;
+  }
+
+  #tabs {
+    display: inline-flex;
+    overflow-x: scroll;
+    width: 100%;
+  }
+
+  #tabs a {
+    display: inline;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  #tabs a:first-of-type {
+    border-radius: 12px 0 0 12px;
+  }
+  #tabs a:last-of-type {
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 0;
+  }
+  #tabs a:only-of-type {
+    border-radius: 12px;
+  }
+
+  .content {
+    animation: 0.5s content;
+    background-color: var(--light);
+    border-radius: 24px;
+    width: 100%;
+    text-align: justify;
+    overflow-y: scroll;
   }
 }
