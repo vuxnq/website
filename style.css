@@ -1,13 +1,13 @@
 /* variables */
 :root {
-  --background: #11111b;
+  --background: #1e1e2e;
   --opacity: #18182588;
-  --light: #31324444;
+  --light: #11111b88;
   --foreground: #cdd6f4;
   --accent: #96a3f3;
   --highlight: #1e1e2e;
-  --edge: #31324488;
-  --shadow: #11111b88;
+  --edge: #313244;
+  --shadow: #11111b;
 }
 
 /* fonts */
@@ -35,7 +35,7 @@
 }
 @keyframes window {
   from {
-    transform: scale(0.5) translateY(100%);
+    transform: scale(0) translateY(50vh);
     opacity: 0;
     box-shadow: none;
   }
@@ -94,15 +94,15 @@ body {
 nav,
 section {
   background-color: var(--opacity);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--edge);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 2px solid var(--edge);
 }
 
 /* shadow */
 nav,
 section {
-  box-shadow: 0 10px 25px var(--shadow);
+  box-shadow: 0 12px 32px var(--shadow);
 }
 
 footer {
@@ -135,7 +135,7 @@ nav li {
 
 nav a {
   transition: 0.4s;
-  background-color: var(--highlight);
+  background-color: var(--shadow);
   width: 60px;
   height: 60px;
   border-radius: 12px;
@@ -158,7 +158,7 @@ nav a:hover {
   opacity: 0;
   position: absolute;
   pointer-events: none;
-  bottom: 110%;
+  bottom: 125%;
   background-color: var(--light);
   border-radius: 8px;
   padding: 6px;
@@ -167,6 +167,8 @@ nav a:hover {
   line-height: 18px;
   left: 50%;
   transform: translateX(-50%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 nav a:hover .tooltip {
@@ -189,7 +191,7 @@ nav a:active {
 
 nav a.checked {
   background-color: var(--foreground);
-  color: var(--highlight);
+  color: var(--shadow);
 }
 
 main {
@@ -202,6 +204,7 @@ main {
 section {
   animation: window 0.5s cubic-bezier(0.4, 0.2, 0.3, 1);
   display: none;
+  margin: 25px;
 }
 
 section p {
@@ -212,7 +215,7 @@ section p {
 
 section a {
   transition: 0.2s;
-  color: var(--highlight);
+  color: var(--shadow);
   text-decoration: none;
   background-color: var(--foreground);
   padding: 0px 5px;
@@ -310,7 +313,7 @@ footer p {
 }
 #tabs a.checked {
   background-color: var(--foreground);
-  color: var(--highlight);
+  color: var(--shadow);
 }
 
 #tabs a:first-of-type {
