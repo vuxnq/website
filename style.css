@@ -1,13 +1,13 @@
 /* variables */
 :root {
-  --color1: #315239;
-  --opacity: #f9e0db88;
-  --light: #f9e0db44;
-  --foreground: #fde9ea;
-  --accent: #c46666;
-  --highlight: #c4666677;
-  --edge: #fce7e8aa;
-  --shadow: #0a241188;
+  --background: #11111b;
+  --opacity: #18182588;
+  --light: #31324444;
+  --foreground: #cdd6f4;
+  --accent: #96a3f3;
+  --highlight: #1e1e2e;
+  --edge: #31324488;
+  --shadow: #11111b88;
 }
 
 /* fonts */
@@ -71,28 +71,31 @@
 }
 
 ::selection {
-  background-color: var(--highlight);
+  background-color: var(--accent);
+  color: var(--highlight);
 }
 
 body {
   margin: 0;
-  background-color: var(--color1);
-  background-image: url("assets/background/plastic.png"),
-    url("assets/background/curve.png"), url("assets/background/monstera.png");
+  background-color: var(--background);
+  background-image: url("assets/background/plastic.webp"),
+    url("assets/background/curve.webp"), url("assets/background/monstera.webp");
   background-repeat: no-repeat;
   background-position: left bottom, bottom, right bottom;
   background-size: contain;
   background-attachment: fixed;
   color: var(--foreground);
   font-family: common;
+  /* scrollbar fix firefox */
+  scrollbar-color: var(--opacity) transparent;
 }
 
 /* glassmorphism */
 nav,
 section {
   background-color: var(--opacity);
-  backdrop-filter: saturate(2) blur(15px);
-  -webkit-backdrop-filter: saturate(2) blur(15px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--edge);
 }
 
@@ -132,19 +135,19 @@ nav li {
 
 nav a {
   transition: 0.4s;
-  background-color: var(--foreground);
+  background-color: var(--highlight);
   width: 60px;
   height: 60px;
   border-radius: 12px;
   line-height: 60px;
   font-size: 25px;
-  color: var(--accent);
+  color: var(--foreground);
 }
 
 nav a:hover {
   transition: 0.2s;
-  background-color: var(--highlight);
-  color: var(--foreground);
+  background-color: var(--accent);
+  color: var(--highlight);
   transform: translateY(-10px);
   outline: none;
 }
@@ -179,14 +182,14 @@ nav a:active .tooltip {
 
 nav a:active {
   transition: 0.1s;
-  background-color: var(--accent);
-  color: var(--foreground);
+  background-color: var(--foreground);
+  color: var(--accent);
   transform: translateY(4px);
 }
 
 nav a.checked {
-  background-color: var(--accent);
-  color: var(--foreground);
+  background-color: var(--foreground);
+  color: var(--highlight);
 }
 
 main {
@@ -209,9 +212,9 @@ section p {
 
 section a {
   transition: 0.2s;
-  color: var(--foreground);
+  color: var(--highlight);
   text-decoration: none;
-  background-color: var(--highlight);
+  background-color: var(--foreground);
   padding: 0px 5px;
   border-radius: 5px;
   font-size: 20px;
@@ -219,6 +222,7 @@ section a {
 
 section a:hover {
   background-color: var(--accent);
+  color: var(--highlight);
   outline: none;
 }
 
@@ -293,19 +297,20 @@ footer p {
   display: block;
   border-radius: 0px;
   background-color: var(--light);
+  color: var(--foreground);
 }
 
 #tabs a:hover {
-  background-color: var(--highlight);
-  color: var(--foreground);
+  background-color: var(--accent);
+  color: var(--highlight);
 }
 #tabs a:active {
-  background-color: var(--accent);
-  color: var(--foreground);
+  background-color: var(--foreground);
+  color: var(--accent);
 }
 #tabs a.checked {
   background-color: var(--foreground);
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 #tabs a:first-of-type {
@@ -348,19 +353,23 @@ section:first-of-type {
 
 /* cursors */
 #about #spotify-playlist {
-  cursor: url("assets/cursors/spotify-playlist.png"), auto;
+  cursor: url("assets/cursors/spotify-playlist.webp"), auto;
+}
+
+#tabs #radiohead-link {
+  cursor: url("assets/cursors/radiohead.webp"), auto;
 }
 
 #tabs #chliq-link {
-  cursor: url("assets/cursors/chliq.gif"), auto;
+  cursor: url("assets/cursors/chliq.webp"), auto;
 }
 
 #tabs #icons-link {
-  cursor: url("assets/cursors/icons.png"), auto;
+  cursor: url("assets/cursors/icons.webp"), auto;
 }
 
 #tabs #sweet-berries-link {
-  cursor: url("assets/cursors/sweet-berries.png"), auto;
+  cursor: url("assets/cursors/sweet-berries.webp"), auto;
 }
 
 /* Mobile Phones Portrait */
