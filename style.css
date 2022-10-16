@@ -15,14 +15,17 @@
 @font-face {
   font-family: heading;
   src: url(assets/font/Corben.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: common;
   src: url(assets/font/Outfit.ttf);
+  font-display: swap;
 }
 @font-face {
   font-family: handwritten;
   src: url(assets/font/Bristol.otf);
+  font-display: swap;
 }
 
 /* animations */
@@ -321,6 +324,11 @@ footer p {
 #lastfm-status {
   font-size: 15px;
   color: var(--subtext);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
 }
 #lastfm-track {
   font-weight: bold;
@@ -458,7 +466,9 @@ section:first-of-type {
     align-items: flex-start;
     height: fit-content;
     margin-top: 5vw;
-    padding-bottom: calc(166px + 25px); /* should be height of navbar + margin */
+    padding-bottom: calc(
+      166px + 25px
+    ); /* should be height of navbar + margin */
   }
 
   nav ul {

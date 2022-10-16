@@ -50,6 +50,6 @@ fetch('https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=vuxnq
     if (track['@attr'] && track['@attr']['nowplaying']) {
       document.getElementById("lastfm").className += "nowplaying";
     } else {
-      document.getElementById("lastfm-status").innerHTML += "last played";
+      document.getElementById("lastfm-status").innerHTML += track.date["#text"];
     }
   })
