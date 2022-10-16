@@ -113,16 +113,28 @@
   }
 }
 
+.background {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+.background img {
+  position: absolute;
+  height: 100vh;
+}
+.background img:nth-child(2) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.background img:nth-child(3) {
+  right: 0;
+}
+
 /* general */
 body {
   margin: 0;
+  background: linear-gradient(var(--shadow), var(--background)) no-repeat;
   background-color: var(--background);
-  background-image: url("assets/background/plastic.webp"),
-    url("assets/background/curve.webp"), url("assets/background/monstera.webp");
-  background-repeat: no-repeat;
-  background-position: left bottom, bottom, right bottom;
-  background-size: contain;
-  background-attachment: fixed;
   color: var(--foreground);
   font-family: common;
 }
@@ -457,15 +469,15 @@ section:first-of-type {
 
 /* Mobile Phones Portrait */
 @media screen and (max-width: 780px) {
-  body {
-    background-image: url("assets/background/monstera.webp");
-    background-position: right bottom;
+  .background :nth-child(1),
+  .background :nth-child(2) {
+    display: none;
   }
 
   main {
     align-items: flex-start;
     height: fit-content;
-    margin-top: 5vw;
+    padding-top: 5vw;
     padding-bottom: calc(
       166px + 25px
     ); /* should be height of navbar + margin */
@@ -514,15 +526,17 @@ section:first-of-type {
   #tabs a {
     display: inline;
     white-space: nowrap;
-    margin: 0;
+    margin-inline: 3px;
+    border-radius: 12px;
   }
 
   #tabs a:first-of-type {
-    border-radius: 12px 0 0 12px;
+    border-radius: 12px;
+    margin-left: 0;
   }
   #tabs a:last-of-type {
-    border-radius: 0 12px 12px 0;
-    margin-bottom: 0;
+    border-radius: 12px;
+    margin-right: 0;
   }
   #tabs a:only-of-type {
     border-radius: 12px;
