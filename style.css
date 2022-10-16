@@ -8,6 +8,7 @@
   --highlight: #1e1e2e;
   --edge: #313244;
   --shadow: #11111b;
+  --subtext: #a6adc8;
 }
 
 /* fonts */
@@ -190,7 +191,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 85vh;
 }
 
 section {
@@ -258,14 +259,70 @@ footer p {
   width: 525px;
   box-sizing: border-box;
   padding: 16px;
+  margin: 0 0 16px auto;
 }
 
 #about img {
   display: block;
   pointer-events: none;
-  height: 200px;
   border-radius: 12px;
   margin-right: 20px;
+}
+
+#about #portrait {
+  height: 200px;
+}
+
+#lastfm {
+  display: none;
+  background: var(--light);
+  max-width: min-content;
+  text-align: right;
+  justify-content: right;
+}
+#lastfm-image {
+  width: 85px;
+  margin-left: 16px;
+}
+#lastfm-image img {
+  max-width: 100%;
+}
+#lastfm-info {
+  max-width: calc(100% - (85px + 16px));
+}
+#lastfm-status {
+  font-size: 15px;
+  color: var(--subtext);
+}
+#lastfm-track {
+  font-weight: bold;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+#lastfm-artist {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  color: var(--subtext);
+}
+
+#lastfm #nowplaying {
+  display: none;
+  border-radius: 0;
+  margin: 0;
+  height: 15px;
+}
+
+#lastfm.nowplaying {
+  background-color: var(--opacity);
+}
+#lastfm.nowplaying #nowplaying {
+  display: inline;
 }
 
 #projects article {
@@ -398,7 +455,9 @@ section:first-of-type {
 
   main {
     align-items: flex-start;
+    height: fit-content;
     margin-top: 5vw;
+    padding-bottom: calc(166px + 25px); /* should be height of navbar + margin */
   }
 
   nav ul {
@@ -419,9 +478,16 @@ section:first-of-type {
   }
 
   #about img {
-    width: 100%;
     object-fit: cover;
     object-position: top;
+  }
+
+  #about #portrait {
+    width: 100%;
+  }
+
+  #lastfm {
+    max-width: 90vw;
   }
 
   #projects article {
