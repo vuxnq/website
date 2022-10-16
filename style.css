@@ -83,6 +83,34 @@
   scrollbar-width: thin;
 }
 
+/* hover */
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover {
+    transition: 0.2s;
+    background-color: var(--accent);
+    color: var(--highlight);
+    transform: translateY(-10px);
+    outline: none;
+  }
+
+  nav a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  article a:hover {
+    background-color: var(--accent);
+    color: var(--highlight);
+    outline: none;
+  }
+
+  #tabs a:hover {
+    background-color: var(--accent);
+    color: var(--highlight);
+  }
+}
+
+/* general */
 body {
   margin: 0;
   background-color: var(--background);
@@ -417,33 +445,6 @@ section:first-of-type {
 
 #tabs #sweet-berries-link {
   cursor: url("assets/cursors/sweet-berries.webp"), auto;
-}
-
-/* hover */
-@media (hover: hover) and (pointer: fine) {
-  nav a:hover {
-    transition: 0.2s;
-    background-color: var(--accent);
-    color: var(--highlight);
-    transform: translateY(-10px);
-    outline: none;
-  }
-
-  nav a:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  article a:hover {
-    background-color: var(--accent);
-    color: var(--highlight);
-    outline: none;
-  }
-
-  #tabs a:hover {
-    background-color: var(--accent);
-    color: var(--highlight);
-  }
 }
 
 /* Mobile Phones Portrait */
