@@ -7,7 +7,6 @@ document.getElementById("chliq-link").onclick = function () { tab('chliq') };
 document.getElementById("icons-link").onclick = function () { tab('icons') };
 document.getElementById("sweet-berries-link").onclick = function () { tab('sweet-berries') };
 
-
 // Switching windows
 function page(selected) {
   var page = document.getElementsByTagName('section');
@@ -40,9 +39,9 @@ function tab(selected) {
 fetch('https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=vuxnq&api_key=70da5f72ca8ddc45015f96f2a0369819&limit=1&nowplaying=true&format=json')
   .then(res => res.json())
   .then(data => {
-    var track = data.recenttracks.track[0]
+    var track = data.recenttracks.track[0];
 
-    document.getElementById('lastfm-image').innerHTML = "<img src=\"" + track.image[2]["#text"] + "\">";
+    document.getElementById('lastfm-image').innerHTML = "<img height=\"85\" width=\"85\" src=\"" + track.image[2]["#text"] + "\">";
     document.getElementById('lastfm-track').innerHTML = track.name;
     document.getElementById('lastfm-artist').innerHTML = track.artist["#text"];
     document.getElementById("lastfm").style.display = "flex";
@@ -50,6 +49,32 @@ fetch('https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=vuxnq
     if (track['@attr'] && track['@attr']['nowplaying']) {
       document.getElementById("lastfm").className += "nowplaying";
     } else {
-      document.getElementById("lastfm-status").innerHTML += track.date["#text"];
+      document.getElementById("lastfm-status").innerHTML = timeSince(new Date(1000 * track.date.uts));
     }
   })
+
+function timeSince(date) {
+  var seconds = Math.floor((new Date() - date) / 1000);
+  var interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + " years ago";
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + " months ago";
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + " days ago";
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + " hours ago";
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + " minutes ago";
+  }
+  return Math.floor(seconds) + " seconds ago";
+}

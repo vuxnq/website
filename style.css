@@ -8,7 +8,7 @@
   --highlight: #1e1e2e;
   --edge: #313244;
   --shadow: #11111b;
-  --subtext: #a6adc8;
+  --subtext: #7f849c;
 }
 
 /* fonts */
@@ -134,6 +134,7 @@
 /* general */
 body {
   margin: 0;
+  height: 100vh;
   background: linear-gradient(var(--shadow), var(--background)) no-repeat;
   background-color: var(--background);
   color: var(--foreground);
@@ -335,7 +336,6 @@ footer p {
   max-width: calc(100% - (85px + 16px));
 }
 #lastfm-status {
-  font-size: 15px;
   color: var(--subtext);
   width: 100%;
   white-space: nowrap;
@@ -357,7 +357,6 @@ footer p {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
-  color: var(--subtext);
 }
 
 #lastfm #nowplaying {
