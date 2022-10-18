@@ -94,6 +94,7 @@
     color: var(--highlight);
     transform: translateY(-10px);
     outline: none;
+    box-shadow: 0 15px 15px var(--light);
   }
 
   nav a:hover .tooltip {
@@ -102,6 +103,7 @@
   }
 
   article a:hover {
+    display: inline-block;
     background-color: var(--accent);
     color: var(--highlight);
     outline: none;
@@ -225,6 +227,7 @@ nav a:active {
   background-color: var(--foreground);
   color: var(--accent);
   transform: translateY(4px);
+  box-shadow: none;
 }
 
 nav a.checked {
@@ -449,6 +452,10 @@ section:first-of-type {
 /* cursors */
 #about #spotify-playlist {
   cursor: url("assets/cursors/spotify-playlist.webp"), auto;
+}
+
+#tabs #game-link {
+  cursor: url("assets/cursors/game.webp"), auto;
 }
 
 #tabs #radiohead-link {
