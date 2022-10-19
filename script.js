@@ -40,7 +40,7 @@ function tab(selected) {
 window.onload = lastfm();
 
 // automatic refresh of lastfm
-setInterval(function() {
+setInterval(function () {
   lastfm();
 }, 5000);
 
@@ -90,4 +90,16 @@ function timeSince(date) {
     return Math.floor(interval) + " minutes ago";
   }
   return Math.floor(seconds) + " seconds ago";
+}
+
+// mouse parallax
+document.addEventListener("mousemove", parallax)
+function parallax(event) {
+  this.getElementById("background").querySelectorAll('img').forEach(layer => {
+    const speed = layer.getAttribute("speed")
+    const x = (window.innerWidth - event.pageX * speed) / 100
+    const y = (window.innerWidth - event.pageY * speed) / 100
+
+    layer.style.transform = "translateX(" + x + "px) translateY(" + y + "px)"
+  })
 }

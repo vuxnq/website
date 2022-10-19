@@ -115,22 +115,16 @@
   }
 }
 
-.background {
+#background {
   position: fixed;
-  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  height: 102vh;
   width: 100vw;
   pointer-events: none;
 }
-.background img {
-  position: absolute;
-  height: 100vh;
-}
-.background img:nth-child(2) {
-  left: 50%;
-  transform: translateX(-50%);
-}
-.background img:nth-child(3) {
-  right: 0;
+#background img {
+  height: 100%;
 }
 
 /* general */
@@ -476,9 +470,13 @@ section:first-of-type {
 
 /* Mobile Phones Portrait */
 @media screen and (max-width: 780px) {
-  .background :nth-child(1),
-  .background :nth-child(2) {
+  #background :nth-child(1),
+  #background :nth-child(2) {
     display: none;
+  }
+  #background {
+    justify-content: end;
+    width: 102vw;
   }
 
   main {
