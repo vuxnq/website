@@ -117,14 +117,25 @@
 
 #background {
   position: fixed;
-  display: flex;
-  justify-content: space-evenly;
   height: 102vh;
   width: 100vw;
   pointer-events: none;
 }
 #background img {
+  position: absolute;
+  transition: 0.2s ease-out;
   height: 100%;
+}
+#background :nth-child(1) {
+  left: -1vw;
+}
+#background :nth-child(2) {
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+#background :nth-child(3) {
+  right: -2vw;
 }
 
 /* general */
@@ -473,10 +484,6 @@ section:first-of-type {
   #background :nth-child(1),
   #background :nth-child(2) {
     display: none;
-  }
-  #background {
-    justify-content: end;
-    width: 102vw;
   }
 
   main {
