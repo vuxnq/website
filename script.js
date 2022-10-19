@@ -93,13 +93,14 @@ function timeSince(date) {
 }
 
 // mouse parallax
-document.addEventListener("mousemove", parallax)
-function parallax(event) {
-  this.getElementById("background").querySelectorAll('img').forEach(layer => {
-    const speed = layer.getAttribute("speed")
-    const x = (window.innerWidth - event.pageX * speed) / 100
-    const y = (window.innerWidth - event.pageY * speed) / 100
+document.addEventListener("mousemove", function (event) {
+  if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === false) {
+    this.getElementById("background").querySelectorAll('img').forEach(layer => {
+      const speed = layer.getAttribute("speed")
+      const x = (window.innerWidth - event.pageX * speed) / 100
+      const y = (window.innerWidth - event.pageY * speed) / 100
 
-    layer.style.transform = "translateX(" + x + "px) translateY(" + y + "px)"
-  })
-}
+      layer.style.transform = "translateX(" + x + "px) translateY(" + y + "px)"
+    })
+  }
+})
