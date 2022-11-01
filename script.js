@@ -1,6 +1,7 @@
 // buttons onclicks
 document.getElementById("about-app").onclick = function () { page("about") };
 document.getElementById("projects-app").onclick = function () { page("projects") };
+document.getElementById("plant-app").onclick = function () { page("plant") };
 
 document.getElementById("radiohead-link").onclick = function () { tab('radiohead') };
 document.getElementById("game-link").onclick = function () { tab('game') };
@@ -97,10 +98,10 @@ document.addEventListener("mousemove", function (event) {
   if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === false) {
     this.getElementById("background").querySelectorAll('img').forEach(layer => {
       const speed = layer.getAttribute("speed")
-      const x = (window.innerWidth - event.pageX * speed) / 100
-      const y = (window.innerWidth - event.pageY * speed) / 100
+      const x = (window.innerWidth - event.clientX * speed) / 100
+      const y = (window.innerWidth - event.clientY * speed) / 100
 
-      layer.style.transform = "translateX(" + x + "px) translateY(" + y + "px)"
+      layer.style.transform = "translate(" + x + "px, "+ y + "px)"
     })
   }
 })

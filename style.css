@@ -154,7 +154,7 @@ article {
   background-color: var(--opacity);
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
-  border: 2px solid var(--edge);
+  border: 1px solid var(--edge);
 }
 
 /* shadow */
@@ -287,10 +287,14 @@ h1 {
   text-align: center;
   margin: 0;
 }
-
 h2 {
   font-family: heading;
   font-size: 20px;
+  margin: 0;
+}
+h3 {
+  font-size: 24px;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -454,6 +458,18 @@ section:first-of-type {
   display: block;
 }
 
+#plant .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+#plant article {
+  display: block;
+  padding: 16px;
+  margin: 0;
+}
+
 /* cursors */
 #about #spotify-playlist {
   cursor: url("assets/cursors/spotify-playlist.webp"), auto;
@@ -501,7 +517,7 @@ section:first-of-type {
 
   nav ul.navigation a {
     box-sizing: border-box;
-    width: 135px;
+    width: calc((312px / 3) - 12px - 8px);
   }
 
   footer {
