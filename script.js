@@ -99,7 +99,7 @@ document.addEventListener("mousemove", function (event) {
     this.getElementById("background").querySelectorAll('img').forEach(layer => {
       const speed = layer.getAttribute("speed")
       const x = (window.innerWidth - event.clientX * speed) / 100
-      const y = (window.innerWidth - event.clientY * speed) / 100
+      const y = (window.innerHeight - event.clientY * speed) / 100
 
       layer.style.transform = "translate(" + x + "px, "+ y + "px)"
     })
