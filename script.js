@@ -1,3 +1,12 @@
+// loading screen
+window.addEventListener("load", function () {
+  document.getElementById("background").style.display = "initial";
+  document.getElementById("loading-screen").style.animation = "loading-screen-disappear 0.5s linear 0.2s forwards";
+  setInterval(function () {
+    document.getElementById("loading-screen").style.display = "none";
+  }, 700)
+})
+
 // buttons onclicks
 document.getElementById("about-app").onclick = function () { page("about") };
 document.getElementById("projects-app").onclick = function () { page("projects") };
@@ -38,15 +47,15 @@ function tab(selected) {
 }
 
 // start on load
-window.onload = lastfm();
+window.onload = lastfm_nowplaying(), lastfm_weekly();
 
 // automatic refresh of lastfm
 setInterval(function () {
-  lastfm();
+  lastfm_nowplaying();
 }, 5000);
 
 // lastfm api
-function lastfm() {
+function lastfm_nowplaying() {
   fetch('https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=vuxnq&api_key=70da5f72ca8ddc45015f96f2a0369819&limit=1&nowplaying=true&format=json')
     .then(res => res.json())
     .then(data => {
@@ -63,6 +72,17 @@ function lastfm() {
       } else {
         document.getElementById("lastfm").className = "";
         document.getElementById("lastfm-status").innerHTML = timeSince(new Date(1000 * track.date.uts));
+      }
+    })
+}
+
+function lastfm_weekly() {
+  fetch('https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=vuxnq&api_key=70da5f72ca8ddc45015f96f2a0369819&limit=10&period=7day&format=json')
+    .then(res => res.json())
+    .then(data => {
+      for (let i = 0; i < data.topalbums.album.length; i++) {
+        document.getElementById('plant').innerHTML += "<img src=" + data.topalbums.album[i].image[2]["#text"] + ">"
+        console.log("wda");
       }
     })
 }
@@ -101,7 +121,7 @@ document.addEventListener("mousemove", function (event) {
       const x = (window.innerWidth - event.clientX * speed) / 100
       const y = (window.innerHeight - event.clientY * speed) / 100
 
-      layer.style.transform = "translate(" + x + "px, "+ y + "px)"
+      layer.style.transform = "translate(" + x + "px, " + y + "px)"
     })
   }
 })
