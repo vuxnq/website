@@ -1,11 +1,10 @@
 /* variables */
 :root {
-  --background: #1e1e2e;
+  --base: #1e1e2e;
   --opacity: #18182588;
-  --light: #11111b88;
+  --dark: #11111b88;
   --foreground: #cdd6f4;
   --accent: #96a3f3;
-  --highlight: #1e1e2e;
   --edge: #313244;
   --shadow: #11111b;
   --subtext: #7f849c;
@@ -95,7 +94,7 @@
 
 ::selection {
   background-color: var(--accent);
-  color: var(--highlight);
+  color: var(--base);
 }
 
 /* scrollbar fix firefox */
@@ -109,10 +108,10 @@
   nav a:hover {
     transition: 0.2s;
     background-color: var(--accent);
-    color: var(--highlight);
+    color: var(--base);
     transform: translateY(-10px);
     outline: none;
-    box-shadow: 0 15px 15px var(--light);
+    box-shadow: 0 15px 15px var(--dark);
   }
 
   nav a:hover .tooltip {
@@ -123,13 +122,13 @@
   article a:hover {
     display: inline-block;
     background-color: var(--accent);
-    color: var(--highlight);
+    color: var(--base);
     outline: none;
   }
 
   #tabs a:hover {
     background-color: var(--accent);
-    color: var(--highlight);
+    color: var(--base);
   }
 }
 
@@ -175,8 +174,8 @@
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(var(--shadow), var(--background)) no-repeat;
-  background-color: var(--background);
+  background: linear-gradient(var(--shadow), var(--base)) no-repeat;
+  background-color: var(--base);
   color: var(--foreground);
   font-family: common;
 }
@@ -242,7 +241,7 @@ nav a {
   position: absolute;
   pointer-events: none;
   bottom: 125%;
-  background-color: var(--light);
+  background-color: var(--dark);
   border-radius: 8px;
   padding: 6px;
   color: var(--foreground);
@@ -366,7 +365,7 @@ footer p {
 
 #lastfm {
   display: none;
-  background: var(--light);
+  background: var(--dark);
   max-width: min-content;
   text-align: right;
   justify-content: right;
@@ -442,7 +441,7 @@ footer p {
   padding: 6px 12px;
   display: block;
   border-radius: 0px;
-  background-color: var(--light);
+  background-color: var(--dark);
   color: var(--foreground);
 }
 
@@ -469,7 +468,7 @@ footer p {
 .content {
   animation: 0.5s content;
   display: none;
-  background-color: var(--light);
+  background-color: var(--dark);
   border-radius: 0 24px 24px 0;
   border-left: none;
   width: 70%;
@@ -497,7 +496,7 @@ footer p {
   line-height: 48px;
   border-radius: 8px;
   bottom: 0;
-  box-shadow: 0 15px 15px var(--light);
+  box-shadow: 0 15px 15px var(--dark);
 }
 
 .content a:last-child:hover {
@@ -627,7 +626,7 @@ section:first-of-type {
 
   .content {
     animation: 0.5s content;
-    background-color: var(--light);
+    background-color: var(--dark);
     border-radius: 24px;
     width: 100%;
     text-align: justify;
