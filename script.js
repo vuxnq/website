@@ -47,7 +47,7 @@ function tab(selected) {
 }
 
 // start on load
-window.onload = lastfm_nowplaying(), lastfm_weekly();
+window.onload = lastfm_nowplaying();
 
 // automatic refresh of lastfm
 setInterval(function () {
@@ -72,17 +72,6 @@ function lastfm_nowplaying() {
       } else {
         document.getElementById("lastfm").className = "";
         document.getElementById("lastfm-status").innerHTML = timeSince(new Date(1000 * track.date.uts));
-      }
-    })
-}
-
-function lastfm_weekly() {
-  fetch('https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=vuxnq&api_key=70da5f72ca8ddc45015f96f2a0369819&limit=10&period=7day&format=json')
-    .then(res => res.json())
-    .then(data => {
-      for (let i = 0; i < data.topalbums.album.length; i++) {
-        document.getElementById('plant').innerHTML += "<img src=" + data.topalbums.album[i].image[2]["#text"] + ">"
-        console.log("wda");
       }
     })
 }
