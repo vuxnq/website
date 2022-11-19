@@ -61,10 +61,12 @@ function lastfm_nowplaying() {
     .then(data => {
       var track = data.recenttracks.track[0];
 
-      document.getElementById('lastfm-image').innerHTML = "<img height=\"85\" width=\"85\" src=\"" + track.image[2]["#text"] + "\">";
-      document.getElementById('lastfm-track').innerHTML = track.name;
-      document.getElementById('lastfm-artist').innerHTML = track.artist["#text"];
-      document.getElementById("lastfm").style.display = "flex";
+      document.getElementById("lastfm-info").innerHTML =
+        "<p id=\"lastfm-status\"></p>" +
+        "<img id=\"nowplaying\" height=15 width=15 src=\"assets/images/nowplaying.gif\">" +
+        "<p id=\"lastfm-track\">" + track.name + "</p>" +
+        "<p id=\"lastfm-artist\">" + track.artist["#text"] + "</p>";
+      document.getElementById('lastfm-image').innerHTML = "<img height=85 width=85 src=\"" + track.image[2]["#text"] + "\">";
 
       if (track['@attr'] && track['@attr']['nowplaying']) {
         document.getElementById("lastfm").className = "nowplaying";
@@ -73,6 +75,8 @@ function lastfm_nowplaying() {
         document.getElementById("lastfm").className = "";
         document.getElementById("lastfm-status").innerHTML = timeSince(new Date(1000 * track.date.uts));
       }
+
+      document.getElementById("lastfm").style.display = "flex";
     })
 }
 
