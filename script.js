@@ -1,7 +1,11 @@
 // loading screen
 window.addEventListener("load", function () {
+  document.getElementsByTagName("nav")[0].style.display = "none";
   document.getElementById("background").style.display = "initial";
   document.getElementById("loading-screen").style.animation = "loading-screen-disappear 0.5s linear 0.2s forwards";
+  this.setInterval(function () {
+    document.getElementsByTagName("nav")[0].style.display = "initial";
+  }, 350)
   setInterval(function () {
     document.getElementById("loading-screen").style.display = "none";
   }, 700)
