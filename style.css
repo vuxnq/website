@@ -764,4 +764,9 @@ section:first-of-type {
   .content a:last-child {
     width: 100%;
   }
+
+  #plant article {
+    height: 60vh;
+    width: 100%;
+  }
 }
