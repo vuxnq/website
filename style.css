@@ -84,6 +84,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -582,7 +583,8 @@ section:first-of-type {
   padding: 16px;
   padding-top: 0;
   overflow-y: auto;
-  mask: linear-gradient(transparent,#000 10% 80%,transparent);
+  -webkit-mask: linear-gradient(transparent, #000 10% 80%, transparent);
+  mask: linear-gradient(transparent, #000 10% 80%, transparent);
 }
 
 #plant .lyrics p {
@@ -625,24 +627,26 @@ section:first-of-type {
 }
 
 #plant .background .background-color,
-.background .background-black {
+#plant .background .background-black {
   width: 200%;
   position: absolute;
   border-radius: 100em;
+  -webkit-animation: rotate 35s linear infinite;
   animation: rotate 35s linear infinite;
+  filter: blur(40px);
 }
+
 #plant .background .background-color {
   right: 0;
   top: 0;
-  filter: blur(40px);
   z-index: 10;
-  mix-blend-mode: luminosity;
 }
+
 #plant .background .background-black {
   left: 0;
   bottom: 0;
-  filter: blur(40px);
   z-index: 1;
+  -webkit-animation-direction: reverse;
   animation-direction: reverse;
 }
 
