@@ -556,6 +556,7 @@ section:first-of-type {
   width: 300px;
   height: 550px;
   overflow: hidden;
+  position: relative;
 }
 
 #plant header {
@@ -606,12 +607,22 @@ section:first-of-type {
 
 #plant footer {
   z-index: 10;
-  height: 100px;
-  width: 75%;
+  width: 100%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+#plant footer a {
+  box-sizing: border-box;
+  text-align: center;
+  width: calc(100% - 32px);
+  margin-block: 16px;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 8px;
+  box-shadow: 0 15px 15px var(--dark);
 }
 
 #plant .background {
