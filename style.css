@@ -392,12 +392,38 @@ body>footer p {
   height: 200px;
 }
 
+#lastfm-link {
+  appearance: none;
+  text-decoration: none;
+  color: var(--foreground);
+  display:block;
+  width: fit-content;
+  margin-left: 100%;
+  transform: translateX(-100%);
+}
+
 #lastfm {
+  transition: 0.2s;
   display: none;
   background: var(--dark);
   max-width: min-content;
   text-align: right;
   justify-content: right;
+}
+
+#lastfm-link:hover article{
+  box-shadow: 0 16px 48px var(--shadow);
+  backdrop-filter: blur(48px);
+  -webkit-backdrop-filter: blur(48px);
+  transform: translateY(-8px);
+}
+
+#lastfm-link:active article{
+  transition: 0.1s;
+  box-shadow: 0 8px 16px var(--shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform: translateY(4px);
 }
 
 #lastfm-image {
@@ -568,6 +594,7 @@ section:first-of-type {
 
 #plant header img {
   width: 75px;
+  pointer-events: none;
   border-radius: 12px;
   margin-right: 16px;
 }
