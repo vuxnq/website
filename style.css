@@ -560,36 +560,25 @@ section:first-of-type {
 }
 
 #plant header {
-  position: relative;
   z-index: 10;
   display: flex;
-  flex-shrink: 0;
   align-items: center;
   padding: 16px;
 }
 
-#plant header .image {
+#plant header img {
+  width: 75px;
+  border-radius: 12px;
   margin-right: 16px;
 }
 
-#plant header .image img {
-  width: 75px;
-  border-radius: 12px;
-}
-
 #plant .lyrics {
-  position: relative;
   z-index: 10;
-  flex-grow: 1;
   padding: 16px;
   padding-top: 0;
   overflow-y: auto;
   -webkit-mask: linear-gradient(transparent, #000 10% 80%, transparent);
   mask: linear-gradient(transparent, #000 10% 80%, transparent);
-}
-
-#plant .lyrics p {
-  color: var(--subtext);
 }
 
 #plant .lyrics p {
@@ -602,16 +591,15 @@ section:first-of-type {
 }
 
 #plant .lyrics p:not(.active) {
+  color: var(--subtext);
   filter: blur(1px);
 }
 
 #plant footer {
   z-index: 10;
-  width: 100%;
-  margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 #plant footer a {
@@ -621,7 +609,7 @@ section:first-of-type {
   margin-block: 16px;
   height: 48px;
   line-height: 48px;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 15px 15px var(--dark);
 }
 
