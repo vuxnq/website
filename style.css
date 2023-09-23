@@ -201,8 +201,8 @@
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(var(--shadow), var(--base)) no-repeat;
-  background-color: var(--base);
+  background: radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, var(--base) 69.27%, var(--edge) 100%);
+  background-color: var(--shadow);
   color: var(--foreground);
   font-family: common;
 }
@@ -396,7 +396,7 @@ body>footer p {
   appearance: none;
   text-decoration: none;
   color: var(--foreground);
-  display:block;
+  display: block;
   width: fit-content;
   margin-left: 100%;
   transform: translateX(-100%);
@@ -411,14 +411,14 @@ body>footer p {
   justify-content: right;
 }
 
-#lastfm-link:hover article{
+#lastfm-link:hover article {
   box-shadow: 0 16px 48px var(--shadow);
   backdrop-filter: blur(48px);
   -webkit-backdrop-filter: blur(48px);
   transform: translateY(-8px);
 }
 
-#lastfm-link:active article{
+#lastfm-link:active article {
   transition: 0.1s;
   box-shadow: 0 8px 16px var(--shadow);
   backdrop-filter: blur(16px);
@@ -537,7 +537,6 @@ body>footer p {
   border-radius: 0 24px 24px 0;
   border-left: none;
   width: 70%;
-  text-align: justify;
   overflow-y: scroll;
 }
 
