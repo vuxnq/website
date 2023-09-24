@@ -156,10 +156,6 @@
     background-color: var(--accent);
     color: var(--base);
   }
-
-  .content a:last-child:hover {
-    width: 100%;
-  }
 }
 
 #loading-screen {
@@ -541,33 +537,38 @@ body>footer p {
     border-left: none;
     width: 70%;
     overflow-y: scroll;
+
+    & img {
+      box-sizing: border-box;
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 5px;
+    }
+
+    & a:last-child {
+      box-sizing: border-box;
+      position: sticky;
+      display: block;
+      text-align: center;
+      width: 50%;
+      margin-top: 16px;
+      margin-inline: auto;
+      height: 48px;
+      line-height: 48px;
+      border-radius: 8px;
+      bottom: 0;
+      box-shadow: 0 15px 15px var(--dark);
+    }
+
+    & a:last-child:hover {
+      width: 100%;
+    }
+
+    &:nth-of-type(2) {
+      display: block;
+    }
   }
 
-  & .content img {
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 5px;
-  }
-
-  & .content a:last-child {
-    box-sizing: border-box;
-    position: sticky;
-    display: block;
-    text-align: center;
-    width: 50%;
-    margin-top: 16px;
-    margin-inline: auto;
-    height: 48px;
-    line-height: 48px;
-    border-radius: 8px;
-    bottom: 0;
-    box-shadow: 0 15px 15px var(--dark);
-  }
-
-  & .content:nth-of-type(2) {
-    display: block;
-  }
 }
 
 /* display first */
@@ -682,6 +683,10 @@ section:first-of-type {
 }
 
 #tabs {
+  & #covers-link {
+    cursor: url("assets/cursors/covers.webp"), auto;
+  }
+
   & #game-link {
     cursor: url("assets/cursors/game.webp"), auto;
   }
