@@ -37,6 +37,10 @@
 
   <!-- preload -->
   <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="assets/images/portrait.webp" as="image">
+  <link rel="preload" href="assets/background/monstera.webp" as="image">
+  <link rel="preload" href="assets/background/curve.webp" media="(min-width: 780px)" as="image">
+  <link rel="preload" href="assets/background/plastic.webp" media="(min-width: 780px)" as="image">
 
   <!-- scripts -->
   <script async src="https://kit.fontawesome.com/fdd79f7c58.js" crossorigin="anonymous"></script>
@@ -55,17 +59,19 @@
   <nav>
     <ul class="navigation">
       <li>
-        <a href="" onclick="javascript:page('about'); return false;" class="app checked" id="about-app">
+        <a href="" onclick="javascript:page('about'); return false;" class="app checked" id="about-app"
+          aria-label="about">
           <span class="tooltip">about</span><i class="fa-solid fa-user"></i>
         </a>
       </li>
       <li>
-        <a href="" onclick="javascript:page('projects'); return false;" class="app" id="projects-app">
+        <a href="" onclick="javascript:page('projects'); return false;" class="app" id="projects-app"
+          aria-label="projects">
           <span class="tooltip">projects</span><i class="fa-solid fa-folder"></i>
         </a>
       </li>
       <li>
-        <a href="" onclick="javascript:page('plant'); return false;" class="app" id="plant-app">
+        <a href="" onclick="javascript:page('plant'); return false;" class="app" id="plant-app" aria-label="plant">
           <span class="tooltip">plant</span><i class="fa-solid fa-seedling"></i>
         </a>
       </li>
@@ -97,7 +103,7 @@
     <section id="about">
       <article>
         <div>
-          <img id="portrait" src="assets/images/portrait.webp" alt="portrait">
+          <img id="portrait" height="200" width="200" src="assets/images/portrait.webp" alt="portrait">
         </div>
         <div>
           <h2>vuxnq</h2>
