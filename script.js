@@ -11,18 +11,6 @@ window.addEventListener("load", function () {
   }, 700)
 })
 
-// buttons onclicks
-document.getElementById("about-app").onclick = function () { page("about") };
-document.getElementById("projects-app").onclick = function () { page("projects") };
-document.getElementById("plant-app").onclick = function () { page("plant") };
-
-document.getElementById("covers-link").onclick = function () { tab('covers') };
-document.getElementById("game-link").onclick = function () { tab('game') };
-document.getElementById("radiohead-link").onclick = function () { tab('radiohead') };
-document.getElementById("chliq-link").onclick = function () { tab('chliq') };
-document.getElementById("icons-link").onclick = function () { tab('icons') };
-document.getElementById("sweet-berries-link").onclick = function () { tab('sweet-berries') };
-
 // switching windows
 function page(selected) {
   var page = document.getElementsByTagName('section');
@@ -68,10 +56,10 @@ function lastfm_nowplaying() {
 
       document.getElementById("lastfm-info").innerHTML =
         "<p id=\"lastfm-status\"></p>" +
-        "<img id=\"nowplaying\" height=15 width=15 src=\"assets/images/nowplaying.gif\">" +
+        "<img id=\"nowplaying\" height=15 width=15 src=\"assets/images/nowplaying.gif\" alt=\"nowplaying-status\">" +
         "<p id=\"lastfm-track\">" + track.name + "</p>" +
         "<p id=\"lastfm-artist\">" + track.artist["#text"] + "</p>";
-      document.getElementById('lastfm-image').innerHTML = "<img height=85 width=85 src=\"" + track.image[2]["#text"] + "\">";
+      document.getElementById('lastfm-image').innerHTML = "<img height=85 width=85 src=\"" + track.image[2]["#text"] + "\" alt=\"nowplaying-artwork\">";
 
       if (track['@attr'] && track['@attr']['nowplaying']) {
         document.getElementById("lastfm").className = "nowplaying";
@@ -89,25 +77,15 @@ function timeSince(date) {
   var seconds = Math.floor((new Date() - date) / 1000);
   var interval = seconds / 31536000;
 
-  if (interval > 1) {
-    return Math.floor(interval) + " years ago";
-  }
+  if (interval > 1) return Math.floor(interval) + " years ago";
   interval = seconds / 2592000;
-  if (interval > 1) {
-    return Math.floor(interval) + " months ago";
-  }
+  if (interval > 1) return Math.floor(interval) + " months ago";
   interval = seconds / 86400;
-  if (interval > 1) {
-    return Math.floor(interval) + " days ago";
-  }
+  if (interval > 1) return Math.floor(interval) + " days ago";
   interval = seconds / 3600;
-  if (interval > 1) {
-    return Math.floor(interval) + " hours ago";
-  }
+  if (interval > 1) return Math.floor(interval) + " hours ago";
   interval = seconds / 60;
-  if (interval > 1) {
-    return Math.floor(interval) + " minutes ago";
-  }
+  if (interval > 1) return Math.floor(interval) + " minutes ago";
   return Math.floor(seconds) + " seconds ago";
 }
 

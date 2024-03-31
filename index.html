@@ -48,46 +48,46 @@
 <body>
   <div id="loading-screen"></div>
   <div id="background">
-    <img speed="2" src="assets/background/plastic.webp">
-    <img speed="1" src="assets/background/curve.webp">
-    <img speed="3" src="assets/background/monstera.webp">
+    <img speed="2" src="assets/background/plastic.webp" alt="background-plant">
+    <img speed="1" src="assets/background/curve.webp" alt="background-plant">
+    <img speed="3" src="assets/background/monstera.webp" alt="background-plant">
   </div>
   <nav>
     <ul class="navigation">
       <li>
-        <a class="app checked" id="about-app">
+        <a href="" onclick="javascript:page('about'); return false;" class="app checked" id="about-app">
           <span class="tooltip">about</span><i class="fa-solid fa-user"></i>
         </a>
       </li>
       <li>
-        <a class="app" id="projects-app">
+        <a href="" onclick="javascript:page('projects'); return false;" class="app" id="projects-app">
           <span class="tooltip">projects</span><i class="fa-solid fa-folder"></i>
         </a>
       </li>
       <li>
-        <a class="app" id="plant-app">
+        <a href="" onclick="javascript:page('plant'); return false;" class="app" id="plant-app">
           <span class="tooltip">plant</span><i class="fa-solid fa-seedling"></i>
         </a>
       </li>
     </ul>
     <ul>
       <li>
-        <a href="https://twitter.com/vuxnqik/" target="_blank">
+        <a href="https://twitter.com/vuxnqik/" target="_blank" aria-label="twitter">
           <span class="tooltip">twitter</span><i class="fab fa-twitter"></i>
         </a>
       </li>
       <li>
-        <a href="https://youtube.com/cirix/" target="_blank">
+        <a href="https://youtube.com/cirix/" target="_blank" aria-label="youtube">
           <span class="tooltip">youtube</span><i class="fab fa-youtube"></i>
         </a>
       </li>
       <li>
-        <a href="https://instagram.com/vuxnq/" target="_blank">
+        <a href="https://instagram.com/vuxnq/" target="_blank" aria-label="instagram">
           <span class="tooltip">instagram</span><i class="fab fa-instagram"></i>
         </a>
       </li>
       <li>
-        <a href="https://github.com/vuxnq/" target="_blank">
+        <a href="https://github.com/vuxnq/" target="_blank" aria-label="github">
           <span class="tooltip">github</span><i class="fab fa-github-alt"></i>
         </a>
       </li>
@@ -97,7 +97,7 @@
     <section id="about">
       <article>
         <div>
-          <img height="200" id="portrait" src="assets/images/portrait.webp" alt="portrait">
+          <img id="portrait" src="assets/images/portrait.webp" alt="portrait">
         </div>
         <div>
           <h2>vuxnq</h2>
@@ -118,18 +118,19 @@
     <section id="projects">
       <article>
         <div id="tabs">
-          <a class="link checked" id="covers-link">covers</a>
-          <a class="link" id="game-link">game</a>
-          <a class="link" id="radiohead-link">radiohead</a>
-          <a class="link" id="chliq-link">chliq</a>
-          <a class="link" id="icons-link">icons</a>
-          <a class="link" id="sweet-berries-link">sweet berries</a>
+          <a href="" id="covers-link" onclick="javascript:tab('covers'); return false;" class="link checked">covers</a>
+          <a href="" id="game-link" onclick="javascript:tab('game'); return false;" class="link">game</a>
+          <a href="" id="radiohead-link" onclick="javascript:tab('radiohead'); return false;" class="link">radiohead</a>
+          <a href="" id="chliq-link" onclick="javascript:tab('chliq'); return false;" class="link">chliq</a>
+          <a href="" id="icons-link" onclick="javascript:tab('icons'); return false;" class="link">icons</a>
+          <a href="" id="sweet-berries-link" onclick="javascript:tab('sweet-berries'); return false;" class="link">sweet
+            berries</a>
         </div>
         <div class="content" id="covers">
           <h1>Covers</h1>
           <p>2023</p>
           <p>music frfr</p>
-          <a onclick='page("plant")'>more</a>
+          <a href="" onclick="javascript:page('plant'); return false;">listen</a>
         </div>
         <div class="content" id="game">
           <h1>Game</h1>
@@ -138,14 +139,14 @@
           <p>My first game built in Godot Engine. I'm using this project to learn
             GDScript language and game developing.</p>
           <img src="assets/images/game.webp" alt="thumbnail">
-          <a target="_blank" href="https://github.com/vuxnq/game">more</a>
+          <a target="_blank" href="https://github.com/vuxnq/game">repository</a>
         </div>
         <div class="content" id="radiohead">
           <h1>Radiohead</h1>
           <p>2022</p>
           <p>website</p>
           <p>school project</p>
-          <a target="_blank" href="https://vuxnq.github.io/radiohead">more</a>
+          <a target="_blank" href="https://vuxnq.github.io/radiohead">view</a>
         </div>
         <div class="content" id="chliq">
           <h1>Chliq</h1>
@@ -159,7 +160,7 @@
           <p>2022</p>
           <p>colorful set of custom icons for ios</p>
           <img src="assets/images/icons.webp" alt="thumbnail">
-          <a target="_blank" href="icons/">more</a>
+          <a target="_blank" href="icons/">visit</a>
         </div>
         <div class="content" id="sweet-berries">
           <h1>Sweet Berries</h1>
@@ -167,14 +168,14 @@
           <p>minecraft server</p>
           <p>Sweet Berries offers a wide selection of servers ranging from Survival to... Hub? Can that be counted as a
             server?</p>
-          <a target="_blank" href="sweet-berries/">more</a>
+          <a target="_blank" href="sweet-berries/">visit</a>
         </div>
       </article>
     </section>
     <section id="plant">
       <article>
         <header>
-          <img class="album-artwork" src="assets/cursors/covers.webp" />
+          <img class="album-artwork" src="assets/cursors/covers.webp" alt="album-artwork" />
           <div class="info">
             <h3>covers</h3>
             <p>vuxnq</p>
@@ -189,17 +190,18 @@
             a sracky a hovna a sracky a hovna a sracky a hovna a sracky a </p>
         </div>
         <footer>
-          <a target="_blank" href="https://untitled.stream/library/project/trD93568a6Tx-Qxzc0_bY">play</a>
+          <a target="_blank" href="https://vuxnq.bandcamp.com/album/covers"><i class="fa-brands fa-bandcamp"></i>
+            bandcamp</a>
         </footer>
         <div class="background">
-          <img class="background-color album-artwork" src="assets/images/thumbnail.webp" />
-          <img class="background-black album-artwork" src="assets/images/thumbnail.webp" />
+          <img class="background-color album-artwork" src="assets/images/thumbnail.webp" alt="spinning-background">
+          <img class="background-black album-artwork" src="assets/images/thumbnail.webp" alt="spinning-background">
         </div>
       </article>
     </section>
   </main>
   <footer>
-    <p>© 2024 vuxnq</p>
+    <p>© vuxnq</p>
   </footer>
 </body>
 
