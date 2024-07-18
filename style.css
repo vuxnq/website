@@ -682,6 +682,10 @@ section:first-of-type {
   cursor: url("assets/cursors/spotify-playlist.webp"), auto;
 }
 
+#lastfm-link {
+  cursor: url("assets/cursors/lastfm-link.webp"), auto;
+}
+
 #tabs {
   & #covers-link {
     cursor: url("assets/cursors/covers.webp"), auto;
