@@ -576,7 +576,7 @@ section:first-of-type {
   display: block;
 }
 
-#plant {
+#music {
   & article {
     display: flex;
     flex-direction: column;
@@ -750,7 +750,7 @@ section:first-of-type {
   #about {
     & img {
       object-fit: cover;
-      object-position: top;
+      object-position: middle;
     }
 
     & #portrait {
@@ -808,7 +808,7 @@ section:first-of-type {
     }
   }
 
-  #plant article {
+  #music article {
     height: 60vh;
     width: 100%;
   }
